@@ -29,14 +29,16 @@ public class AdminFilter implements Filter {
 			
 			if(id != null){
 				// 정상적으로 로그인했을 때 이동할 페이지
-				httpRequest.getRequestDispatcher("").forward(request, response);
+				httpRequest.getRequestDispatcher("admin.jsp").forward(request, response);
 			} else {
 				// id 없는 경우 에러페이진
-				httpResponse.sendRedirect("");
+				String errorMsg = "아이디가 존재하지 않습니다";
+				httpResponse.sendRedirect("error.jsp?msg="+errorMsg);
 			}
 		} else {
 			// 에러페이지 이동
-			httpResponse.sendRedirect("");
+			String errorMsg = "관리자 로그인이 필요합니다";
+			httpResponse.sendRedirect("error.jsp?msg"+errorMsg);
 		}
 		chain.doFilter(request, response);
 	}

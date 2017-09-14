@@ -20,7 +20,7 @@ input[type=text], input[type=password] {
 }
 
 button {
-    background-color: #4CAF50;
+    background-color: #616161;
     color: white;
     padding: 14px 20px;
     margin: 8px 0;
@@ -31,12 +31,6 @@ button {
 
 button:hover {
     opacity: 0.8;
-}
-
-.cancelbtn {
-    width: auto;
-    padding: 10px 18px;
-    background-color: #f44336;
 }
 
 .imgcontainer {
@@ -82,7 +76,7 @@ span.psw {
     <label><b>비밀번호</b></label>
     <input type="password" placeholder="비밀번호를 입력해주세요" name="pw" required>
         
-    <button type="submit">로그인</button>
+    <button type="submit"><strong>로그인</strong></button>
   </div>
 
 </form>

@@ -31,5 +31,7 @@ public class CityDTO {
 	public void setCityName(String cityName) {
 		this.cityName = cityName;
 	}
+	
+	
 
 }
