@@ -156,5 +156,46 @@ public class AdminDAO {
 			DBUtil.close(con, pstmt);
 		}
 	}
+	
+	
+	/**
+     * Admin 계정 로그인시 id와 password를 검증한다.
+     * 
+     * Query : SELECT
+     * 
+     * 1. Connection 생성
+     * 2. PreparedStatement 생성
+     * 3. 쿼리 전송
+     * 4. close()
+     * 6. return type : int
+     * 
+     * @throws SQLException
+     */
+	public static int loginCheck(String id, String pw) throws SQLException{
+		Connection con = DBUtil.getConnection();
+		PreparedStatement pstmt = null;
+		String query = "select * from admin where id=? and password=?";
+		int result = 0;
+		
+		try {
+			pstmt = con.prepareStatement(query);
+			pstmt.setString(1, id);
+			pstmt.setString(2, pw);
+			
+			result = pstmt.executeUpdate();
+		} finally {
+			DBUtil.close(con, pstmt);
+		}
+		System.out.println(result);
+		return result;
+	}
 
 }
+
+
+
+
+
+
+
+
