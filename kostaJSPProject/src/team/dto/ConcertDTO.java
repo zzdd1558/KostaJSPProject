@@ -9,19 +9,19 @@ public class ConcertDTO {
 	private String startTime; // start_time
 	private String runningTime; //running_time
 	private String cast;
-	private String image_uri; // image_uri
+	private String imageUri; // image_uri
 	private int adminIdx;	// admin_idx
-	private int type_num;	// type_num
-	private int city_num;	// city_num
+	private int typeNum;	// type_num
+	private int cityNum;	// city_num
 	
 	
 	// 기본 생성자
 	public ConcertDTO() {
 	}
 
-	
+
 	public ConcertDTO(int idx, String name, String place, String startDate, String endDate, String startTime,
-			String runningTime, String cast, String image_uri, int adminIdx, int type_num, int city_num) {
+			String runningTime, String cast, String imageUri, int adminIdx, int typeNum, int cityNum) {
 		super();
 		this.idx = idx;
 		this.name = name;
@@ -31,16 +31,13 @@ public class ConcertDTO {
 		this.startTime = startTime;
 		this.runningTime = runningTime;
 		this.cast = cast;
-		this.image_uri = image_uri;
+		this.imageUri = imageUri;
 		this.adminIdx = adminIdx;
-		this.type_num = type_num;
-		this.city_num = city_num;
+		this.typeNum = typeNum;
+		this.cityNum = cityNum;
 	}
 
 
-	 
-	// setter/getter
-	 
 	public int getIdx() {
 		return idx;
 	}
@@ -121,13 +118,13 @@ public class ConcertDTO {
 	}
 
 
-	public String getImage_uri() {
-		return image_uri;
+	public String getImageUri() {
+		return imageUri;
 	}
 
 
-	public void setImage_uri(String image_uri) {
-		this.image_uri = image_uri;
+	public void setImageUri(String imageUri) {
+		this.imageUri = imageUri;
 	}
 
 
@@ -141,23 +138,26 @@ public class ConcertDTO {
 	}
 
 
-	public int getType_num() {
-		return type_num;
+	public int getTypeNum() {
+		return typeNum;
 	}
 
 
-	public void setType_num(int type_num) {
-		this.type_num = type_num;
+	public void setTypeNum(int typeNum) {
+		this.typeNum = typeNum;
 	}
 
 
-	public int getCity_num() {
-		return city_num;
+	public int getCityNum() {
+		return cityNum;
 	}
 
 
-	public void setCity_num(int city_num) {
-		this.city_num = city_num;
+	public void setCityNum(int cityNum) {
+		this.cityNum = cityNum;
 	}
+	
+	
+
 	
 }

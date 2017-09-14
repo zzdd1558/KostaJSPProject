@@ -33,5 +33,57 @@ public class TypeDAO {
 		}
 		return list;
 	}
+	
+	public static void insert (TypeDTO type) throws SQLException{
+		Connection con = DBUtil.getConnection();
+		PreparedStatement pstmt = null;
+		String query = "insert into type values (type_SEQ.nextval,?)";
+		
+		try {
+			pstmt = con.prepareStatement(query);
+			pstmt.setString(1, type.getTypeName());
+			
+			int result = pstmt.executeUpdate();
+			System.out.println("type "+ result + "행 정상 삽입");
+			
+		} finally {
+			DBUtil.close(con, pstmt);
+		}
+	}
+	
+	public static void update (int typeNum, String typeName) throws SQLException{
+		Connection con = DBUtil.getConnection();
+		PreparedStatement pstmt = null;
+		String query = "update type set type_name=? where type_num=?";
+		
+		try {
+			pstmt = con.prepareStatement(query);
+			pstmt.setString(1, typeName);
+			pstmt.setInt(2, typeNum);
+			
+			int result = pstmt.executeUpdate();
+			System.out.println("type "+ result + "행 정상 수정");
+			
+		} finally {
+			DBUtil.close(con, pstmt);
+		}
+	}
+	
+	public static void delete (String typeName) throws SQLException{
+		Connection con = DBUtil.getConnection();
+		PreparedStatement pstmt = null;
+		String query = "delete from type where type_name=?";
+		
+		try {
+			pstmt = con.prepareStatement(query);
+			pstmt.setString(1, typeName);
+			
+			int result = pstmt.executeUpdate();
+			System.out.println("type "+ result + "행 정상 삭제");
+			
+		} finally {
+			DBUtil.close(con, pstmt);
+		}
+	}
 
 }

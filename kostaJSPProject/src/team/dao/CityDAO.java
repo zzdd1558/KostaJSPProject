@@ -7,6 +7,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import team.dto.AdminDTO;
 import team.dto.CityDTO;
 import team.utils.DBUtil;
 
@@ -33,6 +34,58 @@ public class CityDAO {
 			DBUtil.close(con, pstmt, rset);
 		}
 		return list;
+	}
+	
+	public static void insert (CityDTO city) throws SQLException{
+		Connection con = DBUtil.getConnection();
+		PreparedStatement pstmt = null;
+		String query = "insert into city values (city_SEQ.nextval,?)";
+		
+		try {
+			pstmt = con.prepareStatement(query);
+			pstmt.setString(1, city.getCityName());
+			
+			int result = pstmt.executeUpdate();
+			System.out.println("city "+ result + "행 정상 삽입");
+			
+		} finally {
+			DBUtil.close(con, pstmt);
+		}
+	}
+	
+	public static void update (int cityNum, String cityName) throws SQLException{
+		Connection con = DBUtil.getConnection();
+		PreparedStatement pstmt = null;
+		String query = "update city set city_name=? where city_num=?";
+		
+		try {
+			pstmt = con.prepareStatement(query);
+			pstmt.setString(1, cityName);
+			pstmt.setInt(2, cityNum);
+			
+			int result = pstmt.executeUpdate();
+			System.out.println("city "+ result + "행 정상 수정");
+			
+		} finally {
+			DBUtil.close(con, pstmt);
+		}
+	}
+	
+	public static void delete (String cityName) throws SQLException{
+		Connection con = DBUtil.getConnection();
+		PreparedStatement pstmt = null;
+		String query = "delete from city where city_name=?";
+		
+		try {
+			pstmt = con.prepareStatement(query);
+			pstmt.setString(1, cityName);
+			
+			int result = pstmt.executeUpdate();
+			System.out.println("city "+ result + "행 정상 삭제");
+			
+		} finally {
+			DBUtil.close(con, pstmt);
+		}
 	}
 	
 }

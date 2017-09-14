@@ -6,6 +6,8 @@
 		- jsp : view
 		- 
 	 -->
+<%@page import="team.dto.ConcertDTO"%>
+<%@page import="team.dao.ConcertDAO"%>
 <%@page import="team.dto.CityDTO"%>
 <%@page import="team.dao.CityDAO"%>
 <%@page import="java.util.ArrayList"%>
@@ -26,8 +28,8 @@
 <body>
 
 <%
-	List<CityDTO> list = CityDAO.getAllList();
 
+	
 %>
 	
 

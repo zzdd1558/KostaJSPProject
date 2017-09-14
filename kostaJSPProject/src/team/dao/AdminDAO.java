@@ -39,28 +39,27 @@ public class AdminDAO {
 		return list;
 	}
 	
-	public static void insert(AdminDTO admin) throws SQLException{
+	public static void insert (AdminDTO admin) throws SQLException{
 		Connection con = DBUtil.getConnection();
 		PreparedStatement pstmt = null;
-		String query = "insert into admin values (?,?,?,?,?)";
+		String query = "insert into admin values (admin_SEQ.nextval,?,?,?,?)";
 		
 		try {
 			pstmt = con.prepareStatement(query);
-			pstmt.setInt(1, admin.getAdminIdx());
-			pstmt.setString(2, admin.getId());
-			pstmt.setString(3, admin.getPassword());
-			pstmt.setString(4, admin.getPhoneNum());
-			pstmt.setString(5, admin.getEmail());
+			pstmt.setString(1, admin.getId());
+			pstmt.setString(2, admin.getPassword());
+			pstmt.setString(3, admin.getPhoneNum());
+			pstmt.setString(4, admin.getEmail());
 			
 			int result = pstmt.executeUpdate();
-			System.out.println("admin 1행 정상 삽입");
+			System.out.println("admin "+ result + "행 정상 삽입");
 			
 		} finally {
 			DBUtil.close(con, pstmt);
 		}
 	}
 	
-	public static void update(String id, String password, String phoneNum, String email) throws SQLException{
+	public static void update (String id, String password, String phoneNum, String email) throws SQLException{
 		Connection con = DBUtil.getConnection();
 		PreparedStatement pstmt = null;
 		String query = "update admin set password=?, phonenum=?, email=? where id=?";
@@ -73,12 +72,28 @@ public class AdminDAO {
 			pstmt.setString(4, id);
 			
 			int result = pstmt.executeUpdate();
-			System.out.println("admin 1행 정상 수정");
+			System.out.println("admin "+ result + "행 정상 수정");
 			
 		} finally {
 			DBUtil.close(con, pstmt);
 		}
 	}
 	
+	public static void delete (String id) throws SQLException{
+		Connection con = DBUtil.getConnection();
+		PreparedStatement pstmt = null;
+		String query = "delete from admin where id=?";
+		
+		try {
+			pstmt = con.prepareStatement(query);
+			pstmt.setString(1, id);
+			
+			int result = pstmt.executeUpdate();
+			System.out.println("admin "+ result + "행 정상 삭제");
+			
+		} finally {
+			DBUtil.close(con, pstmt);
+		}
+	}
 
 }
