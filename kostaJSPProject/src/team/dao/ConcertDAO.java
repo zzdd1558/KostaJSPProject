@@ -1,5 +1,5 @@
 package team.dao;
 
-public class ConcertDAO {
+public class ConcertDAO{
 
 }
