@@ -12,80 +12,145 @@ import team.dto.CityDTO;
 import team.utils.DBUtil;
 
 public class CityDAO {
+
+	/**
+	 * 도시의 정보를 전부 SELECT해서 가지고 온다
+	 * 
+	 * Query : SELECT
+	 * 
+	 * 1. Connection 생성 
+	 * 2. PreparedStatement 생성 
+	 * 3. ResultSet 생성
+	 * 4. 쿼리 전송 
+	 * 5. close() 
+	 * 6. return type : List<CityDTO>
+	 * 
+	 * @throws SQLException
+	 * 
+	 */
 	
-	public static List<CityDTO> getAllList() throws SQLException{
+	public static List<CityDTO> getAllList() throws SQLException {
+		
 		List<CityDTO> list = new ArrayList<>();
 		Connection con = DBUtil.getConnection();
 		PreparedStatement pstmt = null;
 		ResultSet rset = null;
-		String query = "select * from city";
-		
+
 		try {
+			String query = "SELECT * FROM city";
 			pstmt = con.prepareStatement(query);
 			rset = pstmt.executeQuery();
-			
-			while(rset.next()){
-				list.add(new CityDTO( rset.getInt(1),
-									  rset.getString(2).trim() ));
-				System.out.println("num : " + rset.getInt(1) + " , name : " + rset.getString(2).trim());
+
+			while (rset.next()) {
+				list.add(new CityDTO(rset.getInt(1), rset.getString(2).trim()));
 			}
-			
 		} finally {
 			DBUtil.close(con, pstmt, rset);
 		}
 		return list;
 	}
+
 	
-	public static void insert (CityDTO city) throws SQLException{
+	/**
+	 * 도시를 추가하는 메소드
+	 * 
+	 * Query : INSERT
+	 * 
+	 * 1. Connection 생성 
+	 * 2. PreparedStatement 생성 
+	 * 3. 쿼리 전송 
+	 * 4. close() 
+	 * 5. return type : void
+	 * 
+	 * @throws SQLException
+	 * 
+	 */
+	
+	public static void insert(CityDTO city) throws SQLException {
+		
 		Connection con = DBUtil.getConnection();
 		PreparedStatement pstmt = null;
-		String query = "insert into city values (city_SEQ.nextval,?)";
-		
+
 		try {
+			String query = "INSERT INTO city VALUES (city_SEQ.nextval,?)";
 			pstmt = con.prepareStatement(query);
 			pstmt.setString(1, city.getCityName());
-			
+
 			int result = pstmt.executeUpdate();
-			System.out.println("city "+ result + "행 정상 삽입");
-			
+			System.out.println("city " + result + "행 정상 삽입");
+
 		} finally {
 			DBUtil.close(con, pstmt);
 		}
 	}
+
 	
-	public static void update (int cityNum, String cityName) throws SQLException{
+	/**
+	 * 도시의 정보를 수정하는 메소드
+	 * 
+	 * Query : UPDATE
+	 * 
+	 * 1. Connection 생성 
+	 * 2. PreparedStatement 생성 
+	 * 3. 쿼리 전송 
+	 * 4. close() 
+	 * 5. return type : void
+	 * 
+	 * @throws SQLException
+	 * 
+	 */
+	
+	public static void update(int cityNum, String cityName) throws SQLException {
+		
 		Connection con = DBUtil.getConnection();
 		PreparedStatement pstmt = null;
-		String query = "update city set city_name=? where city_num=?";
 		
 		try {
+			String query = "UPDATE city SET city_name=? WHERE city_num=?";
 			pstmt = con.prepareStatement(query);
 			pstmt.setString(1, cityName);
 			pstmt.setInt(2, cityNum);
-			
+
 			int result = pstmt.executeUpdate();
-			System.out.println("city "+ result + "행 정상 수정");
-			
+			System.out.println("city " + result + "행 정상 수정");
+
 		} finally {
 			DBUtil.close(con, pstmt);
 		}
 	}
+
 	
-	public static void delete (String cityName) throws SQLException{
+	/**
+	 * 도시의 정보를 삭제하는 메소드
+	 * 
+	 * Query : DELETE
+	 * 
+	 * 1. Connection 생성 
+	 * 2. PreparedStatement 생성 
+	 * 3. 쿼리 전송 
+	 * 4. close() 
+	 * 5. return type : void
+	 * 
+	 * @throws SQLException
+	 * 
+	 */
+	
+	public static void delete(String cityName) throws SQLException {
+		
 		Connection con = DBUtil.getConnection();
 		PreparedStatement pstmt = null;
-		String query = "delete from city where city_name=?";
 		
 		try {
+			String query = "DELETE FROM city WHERE city_name=?";
 			pstmt = con.prepareStatement(query);
 			pstmt.setString(1, cityName);
-			
+
 			int result = pstmt.executeUpdate();
-			System.out.println("city "+ result + "행 정상 삭제");
-			
+			System.out.println("city " + result + "행 정상 삭제");
+
 		} finally {
 			DBUtil.close(con, pstmt);
 		}
 	}
-	
+
 }
