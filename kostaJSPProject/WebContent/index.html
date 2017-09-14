@@ -9,7 +9,7 @@
 <script type="text/javascript" src="./javascripts/jquery-3.2.1.min.js"></script>
 <script>
 	$(document).ready(function() {
-		console.log(1);
+		$.
 	})
 </script>
 <body>
@@ -19,7 +19,7 @@
 		class="w3-sidebar w3-bar-block w3-card-2 w3-top w3-xlarge w3-animate-left"
 		style="display: none; z-index: 2; width: 20%; min-width: 300px;"		id="mySidebar">
 		<a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-right">x</a> 
-		<a href="#food"	onclick="w3_close()" class="w3-bar-item w3-button">Food</a>
+		<a href="#food"	onclick="w3_close()" class="w3-bar-item w3-button">지역별</a>
 		 <a	href="#about" onclick="w3_close()" class="w3-bar-item w3-button">About</a>
 	</nav>
 
@@ -28,7 +28,7 @@
 		<div class="w3-white w3-xlarge"
 			style="max-width: 1200px; margin: auto">
 			<div class="w3-button w3-padding-16 w3-left" onclick="w3_open()">☰</div>
-			<div class="w3-right w3-padding-16">ㅇㅈ</div>
+			<div class="w3-right w3-padding-16"><a href="#">관리자 로그인</a></div>
 			<div class="w3-center w3-padding-16">콘서트 정보</div>
 		</div>
 	</div>
@@ -41,7 +41,7 @@
 		<div class="w3-row-padding w3-padding-16 w3-center " id="food">
 			<div class="w3-quarter">
 				<div class="img-quarter w3-border w3-padding">
-					<img src="./images/1_Seoul/1_baritone.jpg" alt="Sandwich">
+					<img src="./images/1_Seoul/1_baritone.jpg" alt="Sandwich" class="img-hello">
 				</div>
 				<h3>The Perfect Sandwich, A Real NYC Classic</h3>
 				<p>Just some random text, lorem ipsum text praesent tincidunt
@@ -49,7 +49,7 @@
 			</div>
 			<div class="w3-quarter">
 				<div class="img-quarter w3-border w3-padding">
-					<img src="images/1_Seoul/1_bench.jpg" alt="Steak">
+					<img src="images/1_Seoul/1_bench.jpg" alt="Steak" class="img-hello">
 				</div>
 				<h3>Let Me Tell You About This Steak</h3>
 				<p>Once again, some random text to lorem lorem lorem lorem ipsum
@@ -57,7 +57,7 @@
 			</div>
 			<div class="w3-quarter">
 				<div class="img-quarter w3-border w3-padding">
-					<img src="images/1_Seoul/1_dadam.jpg" alt="Cherries">
+					<img src="images/1_Seoul/1_dadam.jpg" alt="Cherries" class="img-hello">
 				</div>
 				<h3>Cherries, interrupted</h3>
 				<p>Lorem ipsum text praesent tincidunt ipsum lipsum.</p>
@@ -65,7 +65,7 @@
 			</div>
 			<div class="w3-quarter">
 				<div class="img-quarter w3-border w3-padding ">
-					<img src="images/8_Daegu/8_kimhyun.jpg" alt="Pasta and Wine">
+					<img src="images/8_Daegu/8_kimhyun.jpg" alt="Pasta and Wine" class="img-hello">
 				</div>
 				<h3>Once Again, Robust Wine and Vegetable Pasta</h3>
 				<p>Lorem ipsum text praesent tincidunt ipsum lipsum.</p>
@@ -76,14 +76,14 @@
 		<div class="w3-row-padding w3-padding-16 w3-center">
 			<div class="w3-quarter">
 				<div class="img-quarter w3-border w3-padding">
-					<img src="images/11_Gyeongsang/11_basilla.jpg" alt="Popsicle">
+					<img src="images/11_Gyeongsang/11_basilla.jpg" alt="Popsicle" class="img-hello">
 				</div>
 				<h3>All I Need Is a Popsicle</h3>
 				<p>Lorem ipsum text praesent tincidunt ipsum lipsum.</p>
 			</div>
 			<div class="w3-quarter">
 				<div class="img-quarter w3-border w3-padding">
-					<img src="images/11_Gyeongsang/11_love.jpg" alt="Salmon">
+					<img src="images/11_Gyeongsang/11_love.jpg" alt="Salmon" class="img-hello">
 				</div>
 				<h3>Salmon For Your Skin</h3>
 				<p>Once again, some random text to lorem lorem lorem lorem ipsum
@@ -91,7 +91,7 @@
 			</div>
 			<div class="w3-quarter">
 				<div class="img-quarter w3-border w3-padding">
-					<img src="images/11_Gyeongsang/11_hiphop.jpg" alt="Sandwich">
+					<img src="images/11_Gyeongsang/11_hiphop.jpg" alt="Sandwich" class="img-hello">
 				</div>
 				<h3>The Perfect Sandwich, A Real Classic</h3>
 				<p>Just some random text, lorem ipsum text praesent tincidunt
@@ -99,7 +99,7 @@
 			</div>
 			<div class="w3-quarter">
 				<div class="img-quarter w3-border w3-padding w3-center">
-					<img src="images/11_Gyeongsang/11_haulbin.jpg" alt="Croissant">
+					<img src="images/11_Gyeongsang/11_haulbin.jpg" alt="Croissant" class="img-hello">
 				</div>
 				<h3>Le French</h3>
 				<p>Lorem lorem lorem lorem ipsum text praesent tincidunt ipsum
@@ -107,50 +107,13 @@
 			</div>
 		</div>
 
-		<!-- Pagination -->
-		<div class="w3-center w3-padding-32">
-			<div class="w3-bar">
-				<a href="#" class="w3-bar-item w3-button w3-hover-black">«</a> <a
-					href="#" class="w3-bar-item w3-black w3-button">1</a> <a href="#"
-					class="w3-bar-item w3-button w3-hover-black">2</a> <a href="#"
-					class="w3-bar-item w3-button w3-hover-black">3</a> <a href="#"
-					class="w3-bar-item w3-button w3-hover-black">4</a> <a href="#"
-					class="w3-bar-item w3-button w3-hover-black">»</a>
-			</div>
-		</div>
-
-		<hr id="about">
-
-		<!-- About Section -->
-		<div class="w3-container w3-padding-32 w3-center">
-			<h3>About Me, The Food Man</h3>
-			<br> <img src="/images/chef.jpg" alt="Me" class="w3-image"
-				style="display: block; margin: auto" width="800" height="533">
-			<div class="w3-padding-32">
-				<h4>
-					<b>I am Who I Am!</b>
-				</h4>
-				<h6>
-					<i>With Passion For Real, Good Food</i>
-				</h6>
-				<p>Just me, myself and I, exploring the universe of unknownment.
-					I have a heart of love and an interest of lorem ipsum and mauris
-					neque quam blog. I want to share my world with you. Praesent
-					tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta
-					lectus vitae, ultricies congue gravida diam non fringilla. Praesent
-					tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta
-					lectus vitae, ultricies congue gravida diam non fringilla.</p>
-			</div>
-		</div>
-		<hr>
+		
 
 		<!-- Footer -->
 		<footer class="w3-row-padding w3-padding-32">
 			<div class="w3-third">
-				<h3>FOOTER</h3>
-				<p>Praesent tincidunt sed tellus ut rutrum. Sed vitae justo
-					condimentum, porta lectus vitae, ultricies congue gravida diam non
-					fringilla.</p>
+				<h3>소개</h3>
+				<p>안녕하세요 이용진 , 최윤진입니다</p>
 				<p>
 					Powered by <a href="https://www.w3schools.com/w3css/default.asp"
 						target="_blank">w3.css</a>
@@ -158,36 +121,42 @@
 			</div>
 
 			<div class="w3-third">
-				<h3>BLOG POSTS</h3>
+				<h3>만든이</h3>
 				<ul class="w3-ul w3-hoverable">
-					<li class="w3-padding-16"><img src="/images/workshop.jpg"
-						class="w3-left w3-margin-right" style="width: 50px"> <span
-						class="w3-large">Lorem</span><br> <span>Sed mattis
-							nunc</span></li>
-					<li class="w3-padding-16"><img src="/images/gondol.jpg"
-						class="w3-left w3-margin-right" style="width: 50px"> <span
-						class="w3-large">Ipsum</span><br> <span>Praes tinci
-							sed</span></li>
+					<li class="w3-padding-16">
+						<img src="./images/creatorImages/yongjin.jpg"	class="w3-left w3-margin-right" style="width: 70px;" alt="용진"> 
+						<span class="w3-large">이용진</span><br> 
+						휴대폰 : <span>010-3262-5257</span><br>
+						이메일 : <span>lyj8270@naver.com</span>
+					</li>
+					<li class="w3-padding-16">
+					<img src="./images/creatorImages/yunjin.jpg" class="w3-left w3-margin-right" style="width: 70px;" alt="윤진">
+						<span class="w3-large">최 윤진</span><br>
+						휴대폰 : <span>010-7759-9183</span><br> 
+						이메일 : <span>zzdd1558@naver.com</span>
+					</li>
 				</ul>
 			</div>
 
 			<div class="w3-third w3-serif">
-				<h3>POPULAR TAGS</h3>
+				<h3>제 3의 조력자</h3>
 				<p>
-					<span class="w3-tag w3-black w3-margin-bottom">Travel</span> <span
-						class="w3-tag w3-dark-grey w3-small w3-margin-bottom">New
-						York</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Dinner</span>
-					<span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Salmon</span>
-					<span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">France</span>
-					<span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Drinks</span>
-					<span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Ideas</span>
-					<span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Flavors</span>
-					<span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Cuisine</span>
-					<span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Chicken</span>
-					<span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Dressing</span>
-					<span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Fried</span>
-					<span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Fish</span>
-					<span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Duck</span>
+					<span class="w3-tag w3-black w3-margin-bottom">김 혜경</span> 
+					<span class="w3-tag w3-black w3-margin-bottom">박 주엽</span> 
+					<span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">임 대호</span>
+					<span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">이 보영</span>
+					<span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">김 동근</span>
+					<span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">김 정규</span>
+					<span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">홍 민보</span>
+					<span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">최 순규</span>
+					<span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">이 용진</span>
+					<span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">오 주석</span>
+					<span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">정 태준</span>
+					<span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">양 현모</span>
+					<span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">최 윤진</span>
+					<span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">김 창욱</span>
+					<span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">신 승엽</span>
+					<span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">이 진선</span>
 				</p>
 			</div>
 		</footer>
