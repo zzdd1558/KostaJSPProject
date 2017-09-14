@@ -6,6 +6,8 @@
 		- jsp : view
 		- 
 	 -->
+<%@page import="team.dto.CityDTO"%>
+<%@page import="team.dao.CityDAO"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="java.util.List"%>
 <%@page import="java.sql.ResultSet"%>
@@ -22,26 +24,14 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<%
-		Connection con = DBUtil.getConnection();
-		PreparedStatement pstmt = con.prepareStatement("SELECT * FROM dept");
-		ResultSet rs = pstmt.executeQuery();
 
-	%>
+<%
+	List<CityDTO> list = CityDAO.getAllList();
 
-	<table border="1">
-		<tr>
-			<th>deptNo</th>
-			<th>dName</th>
-			<th>loc</th>
-		</tr>
-		<c:forEach var="list" items="${ pageScope.list }">
-			<tr>
-				<td>${ list.deptNo }</td>
-				<td>${ list.dName }</td>
-				<td>${ list.loc }</td>
-			</tr>
-		</c:forEach>
-	</table>
+%>
+	
+
+
+
 </body>
 </html>
