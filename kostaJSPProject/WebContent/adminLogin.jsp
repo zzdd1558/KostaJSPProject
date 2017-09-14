@@ -1,10 +1,10 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
-<title>°ü¸®ÀÚ ·Î±×ÀÎ</title>
+<meta charset="UTF-8">
+<title>ê´€ë¦¬ìž ë¡œê·¸ì¸</title>
 <style>
 form {
     border: 3px solid #f1f1f1;
@@ -71,18 +71,18 @@ span.psw {
 </style>
 <body>
 
-<h2 style="text-align: center;">°ü¸®ÀÚ ·Î±×ÀÎ</h2>
+<h2 style="text-align: center;">ê´€ë¦¬ìž ë¡œê·¸ì¸</h2>
 
 <form action="LoginCheck" method="post">
 
   <div class="container">
     <label><b>ID</b></label>
-    <input type="text" placeholder="ÀÌ¸§À» ÀÔ·ÂÇØÁÖ¼¼¿ä" name="id" required>
+    <input type="text" placeholder="ì´ë¦„ì„ ìž…ë ¥í•´ì£¼ì„¸ìš”" name="id" required>
 
-    <label><b>ºñ¹Ð¹øÈ£</b></label>
-    <input type="password" placeholder="ºñ¹Ð¹øÈ£¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä" name="pw" required>
+    <label><b>ë¹„ë°€ë²ˆí˜¸</b></label>
+    <input type="password" placeholder="ë¹„ë°€ë²ˆí˜¸ë¥¼ ìž…ë ¥í•´ì£¼ì„¸ìš”" name="pw" required>
         
-    <button type="submit">·Î±×ÀÎ</button>
+    <button type="submit">ë¡œê·¸ì¸</button>
   </div>
 
 </form>
