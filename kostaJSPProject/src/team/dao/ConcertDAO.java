@@ -46,6 +46,72 @@ public class ConcertDAO {
 		return list;
 	}
 	
+	public static List<ConcertDTO> getCityList(int cityNum) throws SQLException{
+		List<ConcertDTO> list = new ArrayList<>();
+		Connection con = DBUtil.getConnection();
+		PreparedStatement pstmt = null;
+		ResultSet rset = null;
+		String query = "select * from concert where city_num=?";
+		
+		try {
+			pstmt = con.prepareStatement(query);
+			pstmt.setInt(1, cityNum);
+			rset = pstmt.executeQuery();
+			
+			while(rset.next()){
+				list.add(new ConcertDTO( rset.getInt(1),
+									     rset.getString(2).trim(),
+									     rset.getString(3).trim(),
+									     rset.getString(4).trim(),
+									     rset.getString(5).trim(),
+									     rset.getString(6).trim(),
+									     rset.getString(7).trim(),
+									     rset.getString(8).trim(), 
+									     rset.getString(9).trim(),
+									     rset.getInt(10),
+									     rset.getInt(11),
+									     rset.getInt(12) ));
+			}
+			
+		} finally {
+			DBUtil.close(con, pstmt, rset);
+		}
+		return list;
+	}
+	
+	public static List<ConcertDTO> getTypeList(int typeNum) throws SQLException{
+		List<ConcertDTO> list = new ArrayList<>();
+		Connection con = DBUtil.getConnection();
+		PreparedStatement pstmt = null;
+		ResultSet rset = null;
+		String query = "select * from concert where type_num=?";
+		
+		try {
+			pstmt = con.prepareStatement(query);
+			pstmt.setInt(1, typeNum);
+			rset = pstmt.executeQuery();
+			
+			while(rset.next()){
+				list.add(new ConcertDTO( rset.getInt(1),
+									     rset.getString(2).trim(),
+									     rset.getString(3).trim(),
+									     rset.getString(4).trim(),
+									     rset.getString(5).trim(),
+									     rset.getString(6).trim(),
+									     rset.getString(7).trim(),
+									     rset.getString(8).trim(), 
+									     rset.getString(9).trim(),
+									     rset.getInt(10),
+									     rset.getInt(11),
+									     rset.getInt(12) ));
+			}
+			
+		} finally {
+			DBUtil.close(con, pstmt, rset);
+		}
+		return list;
+	}
+	
 	public static void insert (ConcertDTO concert) throws SQLException{
 		Connection con = DBUtil.getConnection();
 		PreparedStatement pstmt = null;
