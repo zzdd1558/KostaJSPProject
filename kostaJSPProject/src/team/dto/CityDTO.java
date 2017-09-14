@@ -3,7 +3,8 @@ package team.dto;
 public class CityDTO {
 	private int cityNum; // city_num
 	private String cityName; // city_name
-	
+
+	// 기본 생성자
 	public CityDTO() {
 	}
 
@@ -12,6 +13,8 @@ public class CityDTO {
 		this.cityNum = cityNum;
 		this.cityName = cityName;
 	}
+
+	// setter/getter
 
 	public int getCityNum() {
 		return cityNum;
