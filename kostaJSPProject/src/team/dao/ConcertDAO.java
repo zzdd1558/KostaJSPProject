@@ -45,10 +45,4 @@ public class ConcertDAO {
 		return list;
 	}
 	
-	
-	
-	
-	
-	
-
 }
