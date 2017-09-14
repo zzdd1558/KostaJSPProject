@@ -4,7 +4,8 @@ public class AdminDTO {
 	private int adminIdx; // admin_idx
 	private String id;
 	private String password;
-	
+
+	// 기본생성자
 	public AdminDTO() {
 	}
 
@@ -15,6 +16,8 @@ public class AdminDTO {
 		this.password = password;
 	}
 
+	// setter/getter
+	
 	public int getAdminIdx() {
 		return adminIdx;
 	}
