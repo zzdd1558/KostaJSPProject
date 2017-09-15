@@ -172,12 +172,14 @@ public class AdminDAO {
      * @throws SQLException
      */
 	public static int loginCheck(String id, String pw) throws SQLException{
+		
 		Connection con = DBUtil.getConnection();
 		PreparedStatement pstmt = null;
-		String query = "select * from admin where id=? and password=?";
+		
 		int result = 0;
 		
 		try {
+			String query = "SELECT * FROM admin WHERE id=? AND password=?";
 			pstmt = con.prepareStatement(query);
 			pstmt.setString(1, id);
 			pstmt.setString(2, pw);

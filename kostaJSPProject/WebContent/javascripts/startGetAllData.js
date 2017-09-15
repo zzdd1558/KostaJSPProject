@@ -1,39 +1,32 @@
 $(document).ready(function() {
+	
+	/** 
+	 * id가 openNav인 태그를 클릭했을시
+	 * ajax를통해 dom control
+	 * */
 	$("#openNav").click(function(){
-		$(".cityNav").remove;
+		$('#mySidebar > a').remove();
 		let nav = $("#mySidebar");
-		$('.cityNav').remove();
-		
 		$.ajax({
 			type : "POST",
-			url : "getAllData",
+			url : "getAllData.do",
 			contentType : "application/x-www-form-urlencoded; charset=utf-8",
 			datatype : "json",
 			success : function(data) {
-				
-				nav.append(`<a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-right cityNav">x</a>`);
+				console.log('1'+data.first.length);
+				console.log('2'+data.first[0]);
+				console.log('3'+data.first[1]);
+				console.log('4'+data.first[2]);
+				nav.append(`<a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-right">x</a>`);
 	            for(let i = 0; i< data.first.length; i++){
-	            	let query = `<a href='#${ data.first[i].cityNum }' onclick='w3_close()' class='w3-bar-item w3-button cityNav'>${ data.first[i].cityName}</a>`;
+	            	let query = `<a href='#' data-item='${ data.first[i].cityNum }' class='w3-bar-item w3-button cityEvent'>${ data.first[i].cityName}</a>`;
 	                nav.append(query);
 	            }
-	            nav.append(`<a href="#about" onclick="w3_close()" class="w3-bar-item w3-button cityNav">만든사람</a> `);
+	            nav.append(`<a href="#about" id="test" class="w3-bar-item w3-button">만든사람</a> `);
 			},
 			error : function(e) {
 				alert("에러발생" + e);
 			}
 		});
 	});
-	
-	$("[href^='#']").click(function(){
-		console.log(`click`);
-	})
 });
-
-//Script to open and close sidebar
-function w3_open() {
-	document.getElementById("mySidebar").style.display = "block";
-}
-
-function w3_close() {
-	document.getElementById("mySidebar").style.display = "none";
-}

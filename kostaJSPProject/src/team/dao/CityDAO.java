@@ -152,5 +152,4 @@ public class CityDAO {
 			DBUtil.close(con, pstmt);
 		}
 	}
-
 }

@@ -114,6 +114,60 @@ public class ConcertDAO {
 		return list;
 	}
 	
+
+	/**
+	 * 
+	 * GetKindsOfAreaDataController servler에서 사용
+	 * 
+	 * 선택 지역의 모든 콘서트의 정보를 가져오는 메소드
+	 * 
+	 * Query : SELECT
+	 * 
+	 * 1. Connection 생성 
+	 * 2. PreparedStatement 생성
+	 * 3. ResultSet 생성 
+	 * 4. 쿼리 전송 
+	 * 5. close() 
+	 * 6. return type : void
+	 * 
+	 * @throws SQLException
+	 * 
+	 */
+	
+	public static List<ConcertDTO> getKindsOfCityData(int cityNum) throws SQLException {
+		
+		List<ConcertDTO> list = new ArrayList<>();
+		Connection con = DBUtil.getConnection();
+		PreparedStatement pstmt = null;
+		ResultSet rset = null;
+		
+		try {
+			String query = "SELECT * FROM concert WHERE city_num = ?";
+			pstmt = con.prepareStatement(query);
+			pstmt.setInt(1, cityNum);
+
+			rset = pstmt.executeQuery();
+			
+			while(rset.next()){
+				list.add(new ConcertDTO( rset.getInt(1),
+									     rset.getString(2).trim(),
+									     rset.getString(3).trim(),
+									     rset.getString(4).trim(),
+									     rset.getString(5).trim(),
+									     rset.getString(6).trim(),
+									     rset.getString(7).trim(),
+									     rset.getString(8).trim(), 
+									     rset.getString(9).trim(),
+									     rset.getInt(10),
+									     rset.getInt(11),
+									     rset.getInt(12) ));
+			}
+		} finally {
+			DBUtil.close(con, pstmt);
+		}
+		return list;
+	}
+
 	
 	/**
 	 * 도시이름으로 검색 - 매개변수로 넘어온 값으로 콘서트를 조회한다
