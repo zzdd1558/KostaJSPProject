@@ -21,8 +21,11 @@ public class GetAllDataController extends HttpServlet {
 		StringBuilder sb = null;
 		try {
 			sb = new StringBuilder();
-			sb.append("{\"first\":[ ");
+			
+			
 			List<CityDTO> cityList = CityDAO.getAllList();
+			
+			sb.append("{\"first\":[ ");
 			for (int i = 0; i < cityList.size(); i++) {
 				sb.append("{\"cityNum\":\"");
 				sb.append(String.valueOf(cityList.get(i).getCityNum()));
@@ -39,7 +42,6 @@ public class GetAllDataController extends HttpServlet {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		System.out.println(sb.toString());
 		PrintWriter out = response.getWriter();
 		out.println(sb.toString());
 		

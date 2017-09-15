@@ -19,7 +19,10 @@ $(document).ready(function() {
 			},
 			datatype : "json",
 			success : function(data) {
-	           
+				console.log(data);
+				console.log(data.result);
+				console.log(data.result.length);
+				console.log(data.result[0]);
 			},
 			error : function(e) {
 				alert("에러발생" + e);
