@@ -38,7 +38,7 @@
 			class="w3-button w3-right">x</a> 
 			
 			<a
-			href="${pageContext.request.contextPath}/index.html"
+			href="${pageContext.request.contextPath}/index.jsp"
 			onclick="w3_close()" class="w3-bar-item w3-button">메인으로</a>
 			
 			<a

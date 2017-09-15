@@ -48,13 +48,13 @@ function documentReady(){
 
 function domController(data){
 	$("#div-content > div").remove();
-	$("h3").remove();
+	$("#h3Tag").remove();
 	console.log("datat loading");
 	let div = $("#div-content");
 	console.log(`길이 : ${data.result.length}`);
 	if(data.result.length <= 0){
 		div.append(`<div class="w3-row-padding w3-padding-16 w3-center inner-div">`);
-		div.append(`<h3> 데이터가 존재하지 않습니다 </h3>`);
+		div.append(`<h3 id="h3Tag"> 데이터가 존재하지 않습니다 </h3>`);
 		div.append(`</div>`);
 	}else{
 		for (let i = 0; i < data.result.length; i++) {
@@ -68,7 +68,7 @@ function domController(data){
 							<img src="./images/${cityNumToName[rs[j].cityNum]}/${rs[j].imageUri}.jpg" alt="${rs[j].name}" class="img-hello">
 						</div>
 						<h3>${rs[j].typeName} - ${rs[j].name}</h3>
-						<h5>장소 : ${rs[j].place}</h5>
+						<h5>장소 : ${rs[j].cityName} - ${rs[j].place}</h5>
 						<p>${rs[j].startDate} ~ ${rs[j].endDate}</p>
 						<p>${rs[j].startTime} - (${rs[j].runningTime}분)</p>
 						<p>출연진 : ${rs[j].cast}</p>
