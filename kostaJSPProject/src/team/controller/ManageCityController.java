@@ -53,7 +53,7 @@ public class ManageCityController extends HttpServlet {
 		}
 		response.sendRedirect("manageView/manageCity.jsp");
 	}
-	
+	/*
 	public void delete(int cityNum,HttpServletRequest request, HttpServletResponse response) throws IOException{
 		try {
 			CityDAO.delete(cityNum);
@@ -61,4 +61,5 @@ public class ManageCityController extends HttpServlet {
 		}
 		response.sendRedirect("manageView/manageConcert.jsp");
 	}
+	*/
 }

@@ -14,7 +14,7 @@
 	<jsp:include page="top.jsp" />
 
 	<!-- !PAGE CONTENT! -->
-	<div class="w3-main w3-content w3-padding" style="max-width: 600px; margin-top: 100px">
+	<div class="w3-main w3-content w3-padding" style="max-width: 400px; margin-top: 100px">
 		<div class="w3-row-padding w3-padding-16 w3-center">
 			<div class="w3-panel w3-padding-32">타입 관리</div>
 			<%
@@ -26,7 +26,6 @@
 					<th>타입번호</th>
 					<th>타입명</th>
 					<td></td>
-					<td></td>
 				</tr>
 				<c:forEach items="${pageScope.typeList}" var="data">
 					<tr>
@@ -35,14 +34,6 @@
 						<td><a href="updateType.jsp?typeNum=${pageScope.data.typeNum}">
 								<button class="w3-button w3-green w3-round">수정</button>
 						</a></td>
-						<td>
-							<form action="${pageContext.request.contextPath}/manageType" method="post">
-								<input type="hidden" name="command" value="delete"> <input
-									type="hidden" name="typeNum" value="${pageScope.data.typeNum}">
-								<input type="button" class="w3-button w3-red w3-round"
-									value="삭제">
-							</form>
-						</td>
 					</tr>
 				</c:forEach>
 			</table>

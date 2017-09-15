@@ -135,7 +135,7 @@ public class CityDAO {
 	 * 
 	 */
 	
-	public static void delete(int cityNum) throws SQLException {
+/*	public static void delete(int cityNum) throws SQLException {
 		
 		Connection con = DBUtil.getConnection();
 		PreparedStatement pstmt = null;
@@ -151,5 +151,5 @@ public class CityDAO {
 		} finally {
 			DBUtil.close(con, pstmt);
 		}
-	}
+	}*/
 }

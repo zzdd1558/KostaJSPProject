@@ -16,7 +16,7 @@
 	<jsp:include page="top.jsp" />
 
 	<!-- !PAGE CONTENT! -->
-	<div class="w3-main w3-content w3-padding" style="max-width: 600px; margin-top: 100px">
+	<div class="w3-main w3-content w3-padding" style="max-width: 400px; margin-top: 100px">
 		<div class="w3-row-padding w3-padding-16 w3-center">
 			<div class="w3-panel w3-padding-32">지역 관리</div>
 			<%
@@ -28,7 +28,6 @@
 					<th>지역번호</th>
 					<th>지역명</th>
 					<td></td>
-					<td></td>
 				</tr>
 				<c:forEach items="${pageScope.cityList}" var="data">
 					<tr>
@@ -37,14 +36,6 @@
 						<td><a href="updateCity.jsp?cityNum=${pageScope.data.cityNum}">
 								<button class="w3-button w3-green w3-round">수정</button>
 						</a></td>
-						<td>
-							<form action="${pageContext.request.contextPath}/manageCity" method="post">
-								<input type="hidden" name="command" value="delete"> <input
-									type="hidden" name="cityNum" value="${pageScope.data.cityNum}">
-								<input type="button" class="w3-button w3-red w3-round"
-									value="삭제">
-							</form>
-						</td>
 					</tr>
 				</c:forEach>
 			</table>

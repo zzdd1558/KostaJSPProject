@@ -54,11 +54,11 @@ public class ManageTypeController extends HttpServlet {
 		response.sendRedirect("manageView/manageType.jsp");
 	}
 	
-//	public void delete(int typeNum,HttpServletRequest request, HttpServletResponse response) throws IOException{
-//		try {
-//			TypeDAO.delete(typeNum);
-//		} catch (SQLException e) {
-//		}
-//		response.sendRedirect("manageView/manageConcert.jsp");
-//	}
+/*	public void delete(int typeNum,HttpServletRequest request, HttpServletResponse response) throws IOException{
+		try {
+			TypeDAO.delete(typeNum);
+		} catch (SQLException e) {
+		}
+		response.sendRedirect("manageView/manageConcert.jsp");
+	}*/
 }

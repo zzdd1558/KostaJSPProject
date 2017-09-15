@@ -129,7 +129,7 @@ public class TypeDAO {
 	 * @throws SQLException
 	 */
 
-	public static void delete(String typeName) throws SQLException {
+/*	public static void delete(String typeName) throws SQLException {
 		
 		Connection con = DBUtil.getConnection();
 		PreparedStatement pstmt = null;
@@ -145,6 +145,6 @@ public class TypeDAO {
 		} finally {
 			DBUtil.close(con, pstmt);
 		}
-	}
+	}*/
 
 }
