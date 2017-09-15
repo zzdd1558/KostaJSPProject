@@ -14,7 +14,6 @@
 <html>
 <title>관리자 페이지</title>
 <meta charset="UTF-8">
-
 <body>
 	<!-- Top menu -->
 	<jsp:include page="top.jsp"/>

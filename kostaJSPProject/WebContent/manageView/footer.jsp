@@ -1,20 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-
 <!DOCTYPE html>
 <html>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="../stylesheets/w3.css">
-<link rel="stylesheet" href="../stylesheets/fonts_googleapis.css">
-<link rel="stylesheet" href="../stylesheets/common.css" />
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<script type="text/javascript" src="../javascripts/jquery-3.2.1.min.js"></script>
 <body>
-
-
 		<!-- Footer -->
 		<footer class="w3-row-padding w3-padding-32">
 			<div class="w3-third">
@@ -25,7 +14,6 @@
 						target="_blank">w3.css</a>
 				</p>
 			</div>
-
 			<div class="w3-third">
 				<h3>만든이</h3>
 				<ul class="w3-ul w3-hoverable">
@@ -43,7 +31,6 @@
 					</li>
 				</ul>
 			</div>
-
 			<div class="w3-third w3-serif">
 				<h3>제 3의 조력자</h3>
 				<p>
@@ -66,10 +53,6 @@
 				</p>
 			</div>
 		</footer>
-
 		<!-- End page content -->
-
-	
-
 </body>
 </html>
