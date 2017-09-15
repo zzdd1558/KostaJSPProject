@@ -8,7 +8,6 @@
 
 <!DOCTYPE html>
 <html>
-<title>지역 관리</title>
 <meta charset="UTF-8">
 
 <body>

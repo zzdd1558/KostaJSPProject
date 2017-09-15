@@ -12,7 +12,6 @@
 
 <!DOCTYPE html>
 <html>
-<title>공연 관리</title>
 <meta charset="UTF-8">
 <body>
 
