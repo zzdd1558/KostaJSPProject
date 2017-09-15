@@ -67,7 +67,8 @@ function domController(data){
 						<div class="img-quarter w3-border w3-padding">
 							<img src="./images/${cityNumToName[rs[j].cityNum]}/${rs[j].imageUri}.jpg" alt="${rs[j].name}" class="img-hello">
 						</div>
-						<h3>${rs[j].typeName} - ${rs[j].name}</h3>
+						<h3>${rs[j].typeName} </h3>
+						<h4>${rs[j].name}</4>
 						<h5>장소 : ${rs[j].cityName} - ${rs[j].place}</h5>
 						<p>${rs[j].startDate} ~ ${rs[j].endDate}</p>
 						<p>${rs[j].startTime} - (${rs[j].runningTime}분)</p>
