@@ -49,8 +49,8 @@
 					</tr>
 					<tr>
 						<td>분류</td>
-						<td><select class="w3-select w3-border" name="typeNum">
-								<option value="${pageScope.concert.typeNum}" disabled selected>${pageScope.concert.joinTypeName}</option>
+						<td><select class="w3-select w3-border" name="typeNum" >
+								<option value="${pageScope.concert.typeNum}" selected="selected">${pageScope.concert.joinTypeName}</option>
 								<c:forEach items="${pageScope.typeList}" var="data">
 									<option value="${data.typeNum}">${data.typeName}</option>
 								</c:forEach>
@@ -59,7 +59,7 @@
 					<tr>
 						<td>지역</td>
 						<td><select class="w3-select w3-border" name="cityNum">
-								<option value="${pageScope.concert.cityNum}" disabled selected>${pageScope.concert.joinCityName}</option>
+								<option value="${pageScope.concert.cityNum}" selected="selected">${pageScope.concert.joinCityName}</option>
 								<c:forEach items="${pageScope.cityList}" var="data">
 									<option value="${data.cityNum}">${data.cityName}</option>
 								</c:forEach>

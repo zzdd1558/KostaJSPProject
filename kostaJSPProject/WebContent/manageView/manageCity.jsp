@@ -3,9 +3,7 @@
 <%@page import="team.dto.TypeDTO"%>
 <%@page import="team.dao.CityDAO"%>
 <%@page import="team.dto.CityDTO"%>
-<%@page import="team.dto.ConcertDTO"%>
 <%@page import="java.util.List"%>
-<%@page import="team.dao.ConcertDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 
@@ -41,15 +39,13 @@
 					<tr>
 						<td>${pageScope.data.cityNum}</td>
 						<td>${pageScope.data.cityName}</td>
-						<td><a href="updateConcert.jsp?cityNum=${pageScope.data.cityNum}">
+						<td><a href="updateCity.jsp?cityNum=${pageScope.data.cityNum}">
 								<button class="w3-button w3-green w3-round">수정</button>
 						</a></td>
 						<td>
-							<form action="${pageContext.request.contextPath}/manageCity"
-								method="post">
-
+							<form action="${pageContext.request.contextPath}/manageCity" method="post">
 								<input type="hidden" name="command" value="delete"> <input
-									type="hidden" name="idx" value="${pageScope.data.cityNum}">
+									type="hidden" name="cityNum" value="${pageScope.data.cityNum}">
 								<input type="button" class="w3-button w3-red w3-round"
 									value="삭제">
 							</form>
@@ -58,9 +54,17 @@
 				</c:forEach>
 			</table>
 			<div class="w3-panel w3-padding-32">
-				<a href="insertCity.jsp">
-					<button class="w3-button w3-indigo w3-round">추가하기</button>
-				</a>
+				<form action="${pageContext.request.contextPath}/manageCity" method="post">
+					<table class="w3-table w3-center">
+						<tr>
+							<td>지역명</td>
+							<td><input class="w3-input w3-border" type="text" name="cityName" required></td>
+						</tr>
+					</table>
+					<input type="hidden" name="cityNum" value="0">
+					<input type="hidden" name="command" value="insert">
+					<input type="submit" class="w3-button w3-indigo w3-round" value="추가하기">
+				</form>
 			</div>
 		</div>
 
@@ -71,10 +75,6 @@
 			<jsp:include page="footer.jsp" />
 		</div>
 	</div>
-
-		<!-- End page content -->
-
-
 
 </body>
 </html>

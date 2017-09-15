@@ -69,7 +69,7 @@ public class TypeDAO {
 		PreparedStatement pstmt = null;
 		
 		try {
-			String query = "INSERT INTO type VALUES (type_SEQ.nextval,?)";
+			String query = "INSERT INTO type VALUES (type_SEQ.nextval-1,?)";
 			pstmt = con.prepareStatement(query);
 			pstmt.setString(1, type.getTypeName());
 

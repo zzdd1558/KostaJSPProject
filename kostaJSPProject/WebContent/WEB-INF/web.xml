@@ -77,4 +77,14 @@
     <servlet-name>ManageConcertController</servlet-name>
     <url-pattern>/manageConcert</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ManageCityController</display-name>
+    <servlet-name>ManageCityController</servlet-name>
+    <servlet-class>team.controller.ManageCityController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ManageCityController</servlet-name>
+    <url-pattern>/manageCity</url-pattern>
+  </servlet-mapping>
 </web-app>

@@ -72,7 +72,7 @@ public class CityDAO {
 		PreparedStatement pstmt = null;
 
 		try {
-			String query = "INSERT INTO city VALUES (city_SEQ.nextval,?)";
+			String query = "INSERT INTO city VALUES (city_SEQ.nextval-1,?)";
 			pstmt = con.prepareStatement(query);
 			pstmt.setString(1, city.getCityName());
 
@@ -135,15 +135,15 @@ public class CityDAO {
 	 * 
 	 */
 	
-	public static void delete(String cityName) throws SQLException {
+	public static void delete(int cityNum) throws SQLException {
 		
 		Connection con = DBUtil.getConnection();
 		PreparedStatement pstmt = null;
 		
 		try {
-			String query = "DELETE FROM city WHERE city_name=?";
+			String query = "DELETE FROM city WHERE city_num=?";
 			pstmt = con.prepareStatement(query);
-			pstmt.setString(1, cityName);
+			pstmt.setInt(1, cityNum);
 
 			int result = pstmt.executeUpdate();
 			System.out.println("city " + result + "행 정상 삭제");
