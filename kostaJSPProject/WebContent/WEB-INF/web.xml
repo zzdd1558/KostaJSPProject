@@ -87,4 +87,14 @@
     <servlet-name>ManageCityController</servlet-name>
     <url-pattern>/manageCity</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ManageTypeController</display-name>
+    <servlet-name>ManageTypeController</servlet-name>
+    <servlet-class>team.controller.ManageTypeController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ManageTypeController</servlet-name>
+    <url-pattern>/manageType</url-pattern>
+  </servlet-mapping>
 </web-app>

@@ -1,6 +1,3 @@
-<%@page import="javax.swing.JOptionPane"%>
-<%@page import="team.dao.TypeDAO"%>
-<%@page import="team.dto.TypeDTO"%>
 <%@page import="team.dao.CityDAO"%>
 <%@page import="team.dto.CityDTO"%>
 <%@page import="java.util.List"%>

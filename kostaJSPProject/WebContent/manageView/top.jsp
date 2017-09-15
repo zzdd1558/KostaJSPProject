@@ -23,7 +23,9 @@
 				</a>
 			</div>
 			<div class="w3-center w3-padding-16">
-				<img src="../images/icons/logo.png" style="width: 200px">
+				<a href="admin.jsp"> 
+					<img src="../images/icons/logo.png"	style="width: 200px">
+				</a>
 			</div>
 		</div>
 	</div>
