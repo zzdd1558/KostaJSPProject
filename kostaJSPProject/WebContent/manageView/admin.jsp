@@ -32,10 +32,9 @@
 				%>
 				<table class="w3-table w3-bordered">
 					<c:forEach begin="0" end="5" var="data">
-					<tr><td>
-						${pageScope.list1[data].name}&nbsp;&nbsp;&nbsp;
-						${pageScope.list1[data].place}
-					</td></tr>
+					<tr><td>${pageScope.list1[data].name}</td>
+						<td>${pageScope.list1[data].place}</td>
+					</tr>
 					</c:forEach>
 				</table>
 				<div class="w3-panel w3-padding-32">

@@ -47,7 +47,7 @@
 			<div class="w3-third w3-serif">
 				<h3>제 3의 조력자</h3>
 				<p>
-					<span class="w3-tag w3-black w3-margin-bottom">김 혜경</span> 
+					<span class="w3-tag w3-black w3-margin-bottom">김 혜경</span>
 					<span class="w3-tag w3-black w3-margin-bottom">박 주엽</span> 
 					<span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">임 대호</span>
 					<span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">이 보영</span>
