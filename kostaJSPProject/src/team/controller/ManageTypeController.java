@@ -14,21 +14,26 @@ import team.dto.TypeDTO;
 public class ManageTypeController extends HttpServlet {
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
+		
+		/** insert , update , delete*/
 		String command = request.getParameter("command");
 		
 		System.out.println(command);
 		
 		switch(command){
-		case"insert":
-			insert(request, response);
-			break;
-		case "update":
-			update(request, response);
-			break;
-		case "delete":
-			break;
+			case"insert":
+				insert(request, response);
+				break;
+			case "update":
+				update(request, response);
+				break;
+			case "delete":
+				break;
 		}
+		response.sendRedirect("manageView/manageType.jsp");
 	}
+	
+	// type 테이블 데이터 INSERT
 	public void insert(HttpServletRequest request, HttpServletResponse response) throws IOException{
 		try {
 			TypeDAO.insert(new TypeDTO(
@@ -38,9 +43,10 @@ public class ManageTypeController extends HttpServlet {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		response.sendRedirect("manageView/manageType.jsp");
+		
 	}
 	
+	// type 테이블 데이터 update
 	public void update(HttpServletRequest request, HttpServletResponse response) throws IOException{
 		try {
 			TypeDAO.update(
@@ -51,7 +57,7 @@ public class ManageTypeController extends HttpServlet {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		response.sendRedirect("manageView/manageType.jsp");
+		
 	}
 	
 /*	public void delete(int typeNum,HttpServletRequest request, HttpServletResponse response) throws IOException{
@@ -59,6 +65,5 @@ public class ManageTypeController extends HttpServlet {
 			TypeDAO.delete(typeNum);
 		} catch (SQLException e) {
 		}
-		response.sendRedirect("manageView/manageConcert.jsp");
 	}*/
 }

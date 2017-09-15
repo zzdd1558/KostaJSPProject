@@ -1,5 +1,5 @@
 package team.dto;
-
+/** admin 테이블 DTO*/
 public class AdminDTO {
 	private int adminIdx; // admin_idx
 	private String id;

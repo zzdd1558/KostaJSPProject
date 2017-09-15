@@ -34,6 +34,7 @@
 				List<TypeDTO> typeList = TypeDAO.getAllList();
 				pageContext.setAttribute("typeList", typeList);
 			%>
+			<%-- src/team.controller/ManageConcertController.java --%>
 			<form action="${pageContext.request.contextPath}/manageConcert"
 				method="post">
 				<table class="w3-table">
@@ -105,16 +106,14 @@
 					</tr>
 				</table>
 				<div class="w3-padding-32">
-					<input type="submit" class="w3-button w3-green w3-round"
-						value="수정완료"> <input type="reset"
-						class="w3-button w3-green w3-round" value="원래대로"> <input
-						class="w3-button w3-green w3-round" type="button" value="뒤로가기"
+					<input type="submit" class="w3-button w3-green w3-round" value="수정완료">
+					<input type="reset"	class="w3-button w3-green w3-round" value="원래대로"> 
+					<input class="w3-button w3-green w3-round" type="button" value="뒤로가기"
 						Onclick="location.href='manageConcert.jsp'">
 				</div>
-				<input type="hidden" name="command" value="update"> <input
-					type="hidden" name="idx" value="${pageScope.concert.idx}">
-				<input type="hidden" name="adminIdx"
-					value="${pageScope.concert.adminIdx}">
+				<input type="hidden" name="command" value="update"> 
+				<input type="hidden" name="idx" value="${pageScope.concert.idx}">
+				<input type="hidden" name="adminIdx" value="${pageScope.concert.adminIdx}">
 			</form>
 		</div>
 

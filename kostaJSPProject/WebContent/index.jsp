@@ -12,11 +12,7 @@
 <script type="text/javascript" src="./javascripts/jquery-3.2.1.min.js"></script>
 <script type="text/javascript" src="./javascripts/startGetAllData.js"></script>
 <script type="text/javascript" src="./javascripts/kindsOfAreaGetData.js"></script>
-
-
 <body>
-
-
 	<nav
 		class="w3-sidebar w3-bar-block w3-card-2 w3-top w3-large w3-animate-left"
 		style="display: none; z-index: 2; width: 20%; min-width: 300px;"
@@ -29,6 +25,7 @@
 			<div class="w3-button w3-padding-16 w3-left" onclick="w3_open()"
 				id="openNav">☰</div>
 			<div class="w3-right w3-padding-16">
+			<%-- login, logout Session check --%>
 				<%
 					if (session.getAttribute("id") == null) {
 				%>
@@ -45,8 +42,6 @@
 				<%
 					}
 				%>
-
-
 			</div>
 
 			<div class="w3-center w3-padding-16">
@@ -64,7 +59,7 @@
 
 		<footer class="w3-row-padding w3-padding-32">
 			<div class="w3-third">
-				<h3>소개</h3>
+				<h3>Introduce</h3>
 				<p>안녕하세요 이용진 , 최윤진입니다</p>
 				<p>
 					Powered by <a href="https://www.w3schools.com/w3css/default.asp"
@@ -73,7 +68,7 @@
 			</div>
 
 			<div class="w3-third">
-				<h3>만든이</h3>
+				<h3>Creator</h3>
 				<ul class="w3-ul w3-hoverable">
 					<li class="w3-padding-16"><img
 						src="images/creatorImages/yongjin.jpg"
@@ -89,7 +84,7 @@
 			</div>
 
 			<div class="w3-third w3-serif">
-				<h3>제 3의 조력자</h3>
+				<h3>5강의실</h3>
 				<p>
 					<span class="w3-tag w3-black w3-margin-bottom">김 혜경</span> <span
 						class="w3-tag w3-black w3-margin-bottom">박 주엽</span> <span

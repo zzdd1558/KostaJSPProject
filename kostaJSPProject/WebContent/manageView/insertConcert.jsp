@@ -27,12 +27,15 @@
 		<div class="w3-row-padding w3-padding-16 w3-center ">
 			<div class="w3-panel w3-padding-32">공연 입력</div>
 			<%
+				/** city list option 에 사용하기 위해 호출*/
 				List<CityDTO> cityList = CityDAO.getAllList();
 				pageContext.setAttribute("cityList", cityList);
 
+				/** type list option 에 사용하기 위해 호출  */
 				List<TypeDTO> typeList = TypeDAO.getAllList();
 				pageContext.setAttribute("typeList", typeList);
 				
+				/** admin list option 에 사용하기 위해 호출*/
 				List<AdminDTO> adminList = AdminDAO.getAllList();
 				pageContext.setAttribute("adminList", adminList);
 			%>

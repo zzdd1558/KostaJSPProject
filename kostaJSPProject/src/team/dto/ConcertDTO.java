@@ -1,5 +1,6 @@
 package team.dto;
 
+/** concert 테이블 DTO */
 public class ConcertDTO {
 	private int idx;
 	private String name;
@@ -77,7 +78,7 @@ public class ConcertDTO {
 		this.joinTypeName = joinTypeName;
 	}
 
-
+	/** setter/ getter */
 	public int getIdx() {
 		return idx;
 	}

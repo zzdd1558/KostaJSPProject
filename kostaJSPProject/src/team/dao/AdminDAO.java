@@ -28,6 +28,7 @@ public class AdminDAO {
      * 
      * @throws SQLException
      */
+	
 	public static List<AdminDTO> getAllList() throws SQLException {
 
 		List<AdminDTO> list = new ArrayList<>();

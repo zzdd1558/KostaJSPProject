@@ -1,5 +1,6 @@
 package team.dto;
 
+ /** city 테이블 DTO*/
 public class CityDTO {
 	private int cityNum; // city_num
 	private String cityName; // city_name
@@ -14,7 +15,9 @@ public class CityDTO {
 		this.cityName = cityName;
 	}
 
-	// setter/getter
+	/**
+	 *  setter/getter
+	 */
 
 	public int getCityNum() {
 		return cityNum;

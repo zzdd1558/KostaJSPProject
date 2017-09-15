@@ -12,7 +12,6 @@ import javax.servlet.http.HttpSession;
 import team.dao.AdminDAO;
 
 public class LoginCheck extends HttpServlet {
-       
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		// 파라미터로 넘어온  값 저장.
@@ -36,7 +35,7 @@ public class LoginCheck extends HttpServlet {
 			}else{
 				
 				//로그인 실패시 index.jsp로 이동
-				response.sendRedirect("index.html");
+				response.sendRedirect("index.jsp");
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();

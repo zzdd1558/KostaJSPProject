@@ -9,7 +9,7 @@
     pageEncoding="UTF-8"%>
     
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-
+<%-- 콘서트 , 도시 , 타입 정보를 보여주는 페이지 --%>
 <!DOCTYPE html>
 <html>
 <meta charset="UTF-8">
@@ -25,13 +25,15 @@
 			
 				<div class="w3-panel w3-padding-32">공연 관리</div>
 				<%
+					/** 콘서트의 모든 정보를 가져와 pageContext에 concert key값으로 저장  */
 					List<ConcertDTO> concertList = ConcertDAO.getAllList();
-					pageContext.setAttribute("list1", concertList);
+					pageContext.setAttribute("consertList", concertList);
 				%>
 				<table class="w3-table w3-bordered">
 					<c:forEach begin="0" end="5" var="data">
-					<tr><td>${pageScope.list1[data].name}</td>
-						<td>${pageScope.list1[data].place}</td>
+					<tr>
+						<td>${pageScope.consertList[data].name}</td>
+						<td>${pageScope.consertList[data].place}</td>
 					</tr>
 					</c:forEach>
 				</table>
@@ -45,14 +47,15 @@
 			<div class="w3-third" style="height: 600px;">
 				<div class="w3-panel w3-padding-32">지역 관리</div>
 				<%
+					/** 지역에 대한 모든 정보를 가져와 pageContext에 cityList key값으로 저장*/
 					List<CityDTO> cityList = CityDAO.getAllList();
-					pageContext.setAttribute("list2", cityList);
+					pageContext.setAttribute("cityList", cityList);
 				%>
 				<table class="w3-table w3-bordered">
 					<c:forEach begin="0" end="5" var="data">
 					<tr><td>
-						${pageScope.list2[data].cityNum}&nbsp;&nbsp;&nbsp;
-						${pageScope.list2[data].cityName}
+						${pageScope.cityList[data].cityNum}&nbsp;&nbsp;&nbsp;
+						${pageScope.cityList[data].cityName}
 					</td></tr>
 					</c:forEach>
 				</table>
@@ -65,14 +68,15 @@
 			<div class="w3-third" style="height: 600px;">
 				<div class="w3-panel w3-padding-32">타입 관리</div>
 				<%
+					/** 콘서트 종류에 대한 모든 정보를 가져와 pageContext에 typeList key 값으로 저장*/
 					List<TypeDTO> typeList = TypeDAO.getAllList();
-					pageContext.setAttribute("list3", typeList);
+					pageContext.setAttribute("typeList", typeList);
 				%>
 				<table class="w3-table w3-bordered">
 					<c:forEach begin="0" end="5" var="data">
 					<tr><td>
-						${pageScope.list3[data].typeNum}&nbsp;&nbsp;&nbsp;
-						${pageScope.list3[data].typeName}
+						${pageScope.typeList[data].typeNum}&nbsp;&nbsp;&nbsp;
+						${pageScope.typeList[data].typeName}
 					</td></tr>
 					</c:forEach>
 				</table>

@@ -20,15 +20,19 @@ public class AdminFilter implements Filter {
 	}
 
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
+		
+		/** request, response 형변환 */
 		HttpServletRequest httpRequest = (HttpServletRequest)request;
 		HttpServletResponse httpResponse = (HttpServletResponse)response;
+		
+		// 세션을 얻어온다. 있으면 사용하고 없으면 세션생성 하지 않음.
 		HttpSession session = httpRequest.getSession(false);
 		
 		if(session != null) {
 			String id = (String)session.getAttribute("id");
 			
+			// 세션에 입력한 id가 있는 경우
 			if(id != null){
-				// 정상적으로 로그인 했을 때
 				chain.doFilter(request, response);
 			} else {
 				// id 없는 경우 에러페이진

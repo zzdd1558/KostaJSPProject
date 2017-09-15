@@ -38,7 +38,9 @@ public class ConcertDAO {
 		ResultSet rset = null;
 		
 		try {
-			String query = "SELECT 	idx, name, place, start_date, end_date, start_time, running_time, cast, image_uri, admin_idx, CON.type_num, CON.city_num, CI.city_name, TY.type_name"
+			String query = "SELECT 	idx, name, place, start_date, end_date, "
+							+ "start_time, running_time, cast, image_uri, "
+							+ "admin_idx, CON.type_num, CON.city_num, CI.city_name, TY.type_name"
 							+" FROM concert CON"
 							+" INNER JOIN city CI ON CON.city_num = CI.city_num"
 							+" INNER JOIN type TY  ON CON.type_num = TY.type_num";

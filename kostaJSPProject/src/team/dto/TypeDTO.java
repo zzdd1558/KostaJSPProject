@@ -9,16 +9,14 @@ public class TypeDTO {
 	// 기본 생성자
 	public TypeDTO() {
 	}
-
 	
-	// setter/getter
-
 	public TypeDTO(int typeNum, String typeName) {
 		super();
 		this.typeNum = typeNum;
 		this.typeName = typeName;
 	}
 
+	// setter/getter
 
 	public int getTypeNum() {
 		return typeNum;
