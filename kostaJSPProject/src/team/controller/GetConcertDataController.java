@@ -68,14 +68,15 @@ public class GetConcertDataController extends HttpServlet {
 					
 					sb.append("{\"name\":\"" + dataDTO.getName() + "\"");
 					sb.append(",\"place\":\"" + dataDTO.getPlace() + "\"");
-					sb.append(",\"CityName\":\"" + dataDTO.getJoinCityName() + "\"");
-					sb.append(",\"TypeName\":\"" + dataDTO.getJoinTypeName() + "\"");
+					sb.append(",\"cityName\":\"" + dataDTO.getJoinCityName() + "\"");
+					sb.append(",\"typeName\":\"" + dataDTO.getJoinTypeName() + "\"");
 					sb.append(",\"startDate\":\"" + dataDTO.getStartDate() + "\"");
 					sb.append(",\"endDate\":\"" + dataDTO.getEndDate() + "\"");
 					sb.append(",\"startTime\":\"" + dataDTO.getStartTime() + "\"");
 					sb.append(",\"runningTime\":\"" + dataDTO.getRunningTime() + "\"");
 					sb.append(",\"cast\":\"" + dataDTO.getCast() + "\"");
 					sb.append(",\"imageUri\":\"" + dataDTO.getImageUri() + "\"");
+					sb.append(",\"cityNum\":\"" + dataDTO.getCityNum() + "\"");
 					
 					
 					if(j == columnCount-1){

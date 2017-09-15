@@ -22,7 +22,7 @@ public class ConcertDTO {
 
 	
 	public ConcertDTO(String name, String place,  String joinCityName , String joinTypeName, String startDate, String endDate, String startTime, String runningTime,
-			String cast, String imageUri) {
+			String cast, String imageUri, int cityNum) {
 		this.name = name;
 		this.place = place;
 		this.joinCityName = joinCityName;
@@ -33,6 +33,7 @@ public class ConcertDTO {
 		this.runningTime = runningTime;
 		this.cast = cast;
 		this.imageUri = imageUri;
+		this.cityNum = cityNum;
 		
 	}
 
