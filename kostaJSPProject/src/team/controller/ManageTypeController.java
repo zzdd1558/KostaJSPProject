@@ -8,10 +8,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import team.dao.CityDAO;
-import team.dto.CityDTO;
+import team.dao.TypeDAO;
+import team.dto.TypeDTO;
 
-public class ManageCityController extends HttpServlet {
+public class ManageTypeController extends HttpServlet {
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
 		String command = request.getParameter("command");
@@ -31,34 +31,34 @@ public class ManageCityController extends HttpServlet {
 	}
 	public void insert(HttpServletRequest request, HttpServletResponse response) throws IOException{
 		try {
-			CityDAO.insert(new CityDTO(
-					Integer.parseInt(request.getParameter("cityNum").trim()),
-					request.getParameter("cityName").trim()
+			TypeDAO.insert(new TypeDTO(
+					Integer.parseInt(request.getParameter("typeNum").trim()),
+					request.getParameter("typeName").trim()
 					));
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		response.sendRedirect("manageView/manageCity.jsp");
+		response.sendRedirect("manageView/manageType.jsp");
 	}
 	
 	public void update(HttpServletRequest request, HttpServletResponse response) throws IOException{
 		try {
-			CityDAO.update(
-					Integer.parseInt(request.getParameter("cityNum").trim()),
-					request.getParameter("cityName").trim()
+			TypeDAO.update(
+					Integer.parseInt(request.getParameter("typeNum").trim()),
+					request.getParameter("typeName").trim()
 					);
 
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		response.sendRedirect("manageView/manageCity.jsp");
+		response.sendRedirect("manageView/manageType.jsp");
 	}
 	
-	public void delete(int cityNum,HttpServletRequest request, HttpServletResponse response) throws IOException{
-		try {
-			CityDAO.delete(cityNum);
-		} catch (SQLException e) {
-		}
-		response.sendRedirect("manageView/manageConcert.jsp");
-	}
+//	public void delete(int typeNum,HttpServletRequest request, HttpServletResponse response) throws IOException{
+//		try {
+//			TypeDAO.delete(typeNum);
+//		} catch (SQLException e) {
+//		}
+//		response.sendRedirect("manageView/manageConcert.jsp");
+//	}
 }
