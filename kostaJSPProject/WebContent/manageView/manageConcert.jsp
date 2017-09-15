@@ -16,12 +16,6 @@
 <title>공연 관리</title>
 <meta charset="UTF-8">
 
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="../stylesheets/w3.css">
-<link rel="stylesheet" href="../stylesheets/fonts_googleapis.css">
-<link rel="stylesheet" href="../stylesheets/common.css" />
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<script type="text/javascript" src="../javascripts/jquery-3.2.1.min.js"></script>
 <body>
 
 
@@ -60,14 +54,15 @@
 								<button class="w3-button w3-green w3-round">수정</button>
 						</a></td>
 						<td>
-							<form action="${pageContext.request.contextPath}/manageConcert"
+							<%-- <form action="${pageContext.request.contextPath}/manageConcert"
 								method="post">
 
-								<input type="hidden" name="command" value="delete"> <input
-									type="hidden" name="idx" value="${pageScope.data.idx}">
-								<input type="button" class="w3-button w3-red w3-round"
-									value="삭제">
-							</form>
+								<input type="hidden" name="command" value="delete"> 
+								<input type="hidden" name="idx" value="${pageScope.data.idx}">
+								
+							</form> --%>
+							<input type="button" class="w3-button w3-red w3-round"
+									value="삭제" id="remove">
 						</td>
 					</tr>
 				</c:forEach>
