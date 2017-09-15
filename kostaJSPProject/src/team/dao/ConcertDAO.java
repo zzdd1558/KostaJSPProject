@@ -350,7 +350,7 @@ public class ConcertDAO {
 		PreparedStatement pstmt = null;
 		
 		try {
-			String query = "UPDATE concert SET name=?, place=?, start_date=?, end_date=?, start_time=?, running_time=?, cast=?, image_uri=?, admin_idx=?, type_num=?, city_num=? WHERE idx=?";
+			String query = "UPDATE concert SET name=?, place=?, start_date=?, end_date=?, start_time=?, running_time=?, cast=?, image_uri=?, type_num=?, city_num=? WHERE idx=?";
 			
 			pstmt = con.prepareStatement(query);
 			pstmt.setString(1, concert.getName());
@@ -361,10 +361,9 @@ public class ConcertDAO {
 			pstmt.setString(6, concert.getRunningTime());
 			pstmt.setString(7, concert.getCast());
 			pstmt.setString(8, concert.getImageUri());
-			pstmt.setInt(9, concert.getAdminIdx());
-			pstmt.setInt(10, concert.getTypeNum());
-			pstmt.setInt(11, concert.getCityNum());
-			pstmt.setInt(12, concert.getIdx());
+			pstmt.setInt(9, concert.getTypeNum());
+			pstmt.setInt(10, concert.getCityNum());
+			pstmt.setInt(11, concert.getIdx());
 			
 			int result = pstmt.executeUpdate();
 			System.out.println("concert "+ result + "행 정상 수정");

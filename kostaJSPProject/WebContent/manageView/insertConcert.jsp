@@ -1,3 +1,5 @@
+<%@page import="team.dao.AdminDAO"%>
+<%@page import="team.dto.AdminDTO"%>
 <%@page import="team.dao.TypeDAO"%>
 <%@page import="team.dto.TypeDTO"%>
 <%@page import="team.dao.CityDAO"%>
@@ -31,33 +33,27 @@
 	<div class="w3-main w3-content w3-padding"
 		style="max-width: 1250px; margin-top: 100px">
 		<div class="w3-row-padding w3-padding-16 w3-center ">
-			<div class="w3-panel w3-padding-32">공연 수정</div>
+			<div class="w3-panel w3-padding-32">공연 입력</div>
 			<%
-				ConcertDTO concert = ConcertDAO.getJustOne(Integer.parseInt(request.getParameter("idx").trim()));
-				pageContext.setAttribute("concert", concert);
-
 				List<CityDTO> cityList = CityDAO.getAllList();
 				pageContext.setAttribute("cityList", cityList);
 
 				List<TypeDTO> typeList = TypeDAO.getAllList();
 				pageContext.setAttribute("typeList", typeList);
+				
+				List<AdminDTO> adminList = AdminDAO.getAllList();
+				pageContext.setAttribute("adminList", adminList);
 			%>
 			<form action="${pageContext.request.contextPath}/manageConcert"
 				method="post">
 				<table class="w3-table">
 					<tr>
-						<td>등록번호</td>
-						<td><div class="w3-input w3-border">${pageScope.concert.idx}</div></td>
-					</tr>
-					<tr>
 						<td>공연명</td>
-						<td><input class="w3-input w3-border" type="text" name="name"
-							value="${pageScope.concert.name}"></td>
+						<td><input class="w3-input w3-border" type="text" name="name" required></td>
 					</tr>
 					<tr>
 						<td>분류</td>
-						<td><select class="w3-select w3-border" name="typeNum">
-								<option value="${pageScope.concert.typeNum}" disabled selected>${pageScope.concert.joinTypeName}</option>
+						<td><select class="w3-select w3-border" name="typeNum" required>
 								<c:forEach items="${pageScope.typeList}" var="data">
 									<option value="${data.typeNum}">${data.typeName}</option>
 								</c:forEach>
@@ -65,8 +61,7 @@
 					</tr>
 					<tr>
 						<td>지역</td>
-						<td><select class="w3-select w3-border" name="cityNum">
-								<option value="${pageScope.concert.cityNum}" disabled selected>${pageScope.concert.joinCityName}</option>
+						<td><select class="w3-select w3-border" name="cityNum" required>
 								<c:forEach items="${pageScope.cityList}" var="data">
 									<option value="${data.cityNum}">${data.cityName}</option>
 								</c:forEach>
@@ -74,55 +69,50 @@
 					</tr>
 					<tr>
 						<td>장소</td>
-						<td><input class="w3-input w3-border" type="text"
-							name="place" value="${pageScope.concert.place}"></td>
+						<td><input class="w3-input w3-border" type="text" name="place" required></td>
 					</tr>
 					<tr>
 						<td>시작일</td>
-						<td><input class="w3-input w3-border" type="text"
-							name="startDate" value="${pageScope.concert.startDate}"></td>
+						<td><input class="w3-input w3-border" type="text" name="startDate" required></td>
 					</tr>
 					<tr>
 						<td>종료일</td>
-						<td><input class="w3-input w3-border" type="text"
-							name="endDate" value="${pageScope.concert.endDate}"></td>
+						<td><input class="w3-input w3-border" type="text" name="endDate" required></td>
 					</tr>
 					<tr>
 						<td>시작시간</td>
-						<td><input class="w3-input w3-border" type="text"
-							name="startTime" value="${pageScope.concert.startTime}"></td>
+						<td><input class="w3-input w3-border" type="text" name="startTime" required></td>
 					</tr>
 					<tr>
 						<td>진행시간</td>
-						<td><input class="w3-input w3-border" type="text"
-							name="runningTime" value="${pageScope.concert.runningTime}"></td>
+						<td><input class="w3-input w3-border" type="text" name="runningTime" required></td>
 					</tr>
 					<tr>
 						<td>출연진</td>
-						<td><input class="w3-input w3-border" type="text" name="cast"
-							value="${pageScope.concert.cast}"></td>
+						<td><input class="w3-input w3-border" type="text" name="cast" required></td>
 					</tr>
 					<tr>
 						<td>이미지URI</td>
-						<td><input class="w3-input w3-border" type="text"
-							name="imageUri" value="${pageScope.concert.imageUri}"></td>
+						<td><input class="w3-input w3-border" type="text" name="imageUri" required></td>
 					</tr>
 					<tr>
 						<td>관리자</td>
-						<td>${sessionScope.id}</td>
+						<td><select class="w3-select w3-border" name="adminIdx" required>
+								<c:forEach items="${pageScope.adminList}" var="data">
+									<option value="${data.adminIdx}">${data.id}</option>
+								</c:forEach>
+						</select></td>
 					</tr>
 				</table>
 				<div class="w3-padding-32">
 					<input type="submit" class="w3-button w3-green w3-round"
-						value="수정완료"> <input type="reset"
-						class="w3-button w3-green w3-round" value="원래대로"> <input
+						value="입력완료"> <input type="reset"
+						class="w3-button w3-green w3-round" value="초기화"> <input
 						class="w3-button w3-green w3-round" type="button" value="뒤로가기"
 						Onclick="location.href='manageConcert.jsp'">
 				</div>
-				<input type="hidden" name="command" value="update"> <input
-					type="hidden" name="idx" value="${pageScope.concert.idx}">
-				<input type="hidden" name="adminIdx"
-					value="${pageScope.concert.adminIdx}">
+				<input type="hidden" name="command" value="insert">
+				<input type="hidden" name="idx" value="0">
 			</form>
 		</div>
 
