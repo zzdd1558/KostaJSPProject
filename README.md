@@ -1,4 +1,4 @@
-#KostaJSPProject
+#KostaMiniJSPProject
 
 주제 : 콘서트 정보 페이지
 
