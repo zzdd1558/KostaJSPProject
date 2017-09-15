@@ -24,7 +24,8 @@ public class LoginCheck extends HttpServlet {
 			if(result != 0){
 				session = request.getSession();
 				session.setAttribute("id", id);
-				request.getRequestDispatcher("manageView/admin.jsp").forward(request, response);
+				// request.getRequestDispatcher("manageView/admin.jsp").forward(request, response);
+				response.sendRedirect("manageView/admin.jsp");
 			}else{
 				response.sendRedirect("index.html");
 			}

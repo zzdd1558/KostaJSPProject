@@ -22,9 +22,7 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <script type="text/javascript" src="./javascripts/jquery-3.2.1.min.js"></script>
 <body>
-
-	<!-- Sidebar (hidden by default) -->
-	<jsp:include page="nav.jsp"/>
+	<
 
 	<!-- Top menu -->
 	<jsp:include page="top.jsp"/>
@@ -33,7 +31,6 @@
 	<div class="w3-main w3-content w3-padding"
 		style="max-width: 1200px; margin-top: 100px">
 		<div class="w3-row-padding w3-padding-16 w3-center " id="food">
-		
 			<div class="w3-third" style="height: 600px;">
 			
 				<div class="w3-panel w3-padding-32">공연 관리</div>
@@ -50,7 +47,9 @@
 					</c:forEach>
 				</table>
 				<div class="w3-panel w3-padding-32">
-					<button class="w3-btn w3-black">더보기</button>
+					<a href="manageConcert.jsp">
+						<button class="w3-btn w3-black">더보기</button>
+					</a>
 				</div>
 				
 			</div>
@@ -69,7 +68,9 @@
 					</c:forEach>
 				</table>
 				<div class="w3-panel w3-padding-32">
-					<button class="w3-btn w3-black">더보기</button>
+					<a href="manageCity.jsp">
+						<button class="w3-btn w3-black">더보기</button>
+					</a>
 				</div>
 			</div>
 			<div class="w3-third" style="height: 600px;">
@@ -87,7 +88,9 @@
 					</c:forEach>
 				</table>
 				<div class="w3-panel w3-padding-32">
-					<button class="w3-btn w3-black">더보기</button>
+					<a href="manageType.jsp">
+						<button class="w3-btn w3-black">더보기</button>
+					</a>
 				</div>
 			</div>
 		</div>
@@ -96,16 +99,6 @@
 		<jsp:include page="footer.jsp"/>
 	</div>
 
-	<script>
-		// Script to open and close sidebar
-		function w3_open() {
-			document.getElementById("mySidebar").style.display = "block";
-		}
-
-		function w3_close() {
-			document.getElementById("mySidebar").style.display = "none";
-		}
-	</script>
 
 </body>
 </html>

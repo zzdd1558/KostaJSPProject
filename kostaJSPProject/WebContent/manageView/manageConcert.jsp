@@ -16,79 +16,66 @@
 <meta charset="UTF-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="./stylesheets/w3.css">
-<link rel="stylesheet" href="./stylesheets/fonts_googleapis.css">
-<link rel="stylesheet" href="./stylesheets/common.css" />
+<link rel="stylesheet" href="../stylesheets/w3.css">
+<link rel="stylesheet" href="../stylesheets/fonts_googleapis.css">
+<link rel="stylesheet" href="../stylesheets/common.css" />
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<script type="text/javascript" src="./javascripts/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="../javascripts/jquery-3.2.1.min.js"></script>
 <body>
 
-	<!-- Sidebar (hidden by default) -->
-	<jsp:include page="nav.jsp"/>
-
+	
 	<!-- Top menu -->
 	<jsp:include page="top.jsp"/>
 
 	<!-- !PAGE CONTENT! -->
 	<div class="w3-main w3-content w3-padding"
 		style="max-width: 1200px; margin-top: 100px">
-		<div class="w3-row-padding w3-padding-16 w3-center " id="food">
-		
-			<div class="w3-third" style="height: 600px;">
-			
-				<div class="w3-panel w3-padding-32">공연 관리</div>
-				<%
-					List<ConcertDTO> concertList = ConcertDAO.getAllList();
-					pageContext.setAttribute("list1", concertList);
-				%>
-				<table class="w3-table w3-bordered">
-					<c:forEach begin="0" end="5" var="data">
-					<tr><td>
-						${pageScope.list1[data].name}&nbsp;&nbsp;&nbsp;
-						${pageScope.list1[data].place}
-					</td></tr>
-					</c:forEach>
-				</table>
-				<div class="w3-panel w3-padding-32">
-					<button class="w3-btn w3-black">더보기</button>
-				</div>
-				
-			</div>
-			<div class="w3-third" style="height: 600px;">
-				<div class="w3-panel w3-padding-32">지역 관리</div>
-				<%
-					List<CityDTO> cityList = CityDAO.getAllList();
-					pageContext.setAttribute("list2", cityList);
-				%>
-				<table class="w3-table w3-bordered">
-					<c:forEach begin="0" end="5" var="data">
-					<tr><td>
-						${pageScope.list2[data].cityNum}&nbsp;&nbsp;&nbsp;
-						${pageScope.list2[data].cityName}
-					</td></tr>
-					</c:forEach>
-				</table>
-				<div class="w3-panel w3-padding-32">
-					<button class="w3-btn w3-black">더보기</button>
-				</div>
-			</div>
-			<div class="w3-third" style="height: 600px;">
-				<div class="w3-panel w3-padding-32">타입 관리</div>
-				<%
-					List<TypeDTO> typeList = TypeDAO.getAllList();
-					pageContext.setAttribute("list3", typeList);
-				%>
-				<table class="w3-table w3-bordered">
-					<c:forEach begin="0" end="5" var="data">
-					<tr><td>
-						${pageScope.list3[data].typeNum}&nbsp;&nbsp;&nbsp;
-						${pageScope.list3[data].typeName}
-					</td></tr>
-					</c:forEach>
-				</table>
-				<div class="w3-panel w3-padding-32">
-					<button class="w3-btn w3-black">더보기</button>
-				</div>
+		<div class="w3-row-padding w3-padding-16 w3-center ">
+			<div class="w3-panel w3-padding-32">공연 관리</div>
+			<%
+				List<ConcertDTO> concertList = ConcertDAO.getAllList();
+				pageContext.setAttribute("concertList", concertList);
+				List<CityDTO> cityList = CityDAO.getAllList();
+				pageContext.setAttribute("cityList", cityList);
+				List<TypeDTO> typeList = TypeDAO.getAllList();
+				pageContext.setAttribute("typeList", typeList);
+			%>
+			<table class="w3-table w3-bordered" style="font-size:small ;">
+				<tr>
+					<th>공연명</th>
+					<th>분류</th>
+					<th>지역</th>
+					<th>장소</th>
+					<th>시작일</th>
+					<th>종료일</th>
+					<th>시작시간</th>
+					<th>진행시간</th>
+					<td></td>
+					<td></td>
+				</tr>
+				<c:forEach items="${pageScope.concertList}" var="data">
+					<tr>
+						<td>${pageScope.data.name}</td>
+						<td>${pageScope.data.joinTypeName}</td>
+						<td>${pageScope.data.joinCityName}</td>
+						<td>${pageScope.data.place}</td>
+						<td>${pageScope.data.startDate}</td>
+						<td>${pageScope.data.endDate}</td>
+						<td>${pageScope.data.startTime}</td>
+						<td>${pageScope.data.runningTime}</td>
+						<td>
+							<a href="#">
+							</a>
+						</td>
+						<td>
+							<a href="#">
+							</a>
+						</td>
+					</tr>
+				</c:forEach>
+			</table>
+			<div class="w3-panel w3-padding-32">
+				<button class="w3-btn w3-black">더보기</button>
 			</div>
 		</div>
 
@@ -98,16 +85,7 @@
 		<!-- End page content -->
 	</div>
 
-	<script>
-		// Script to open and close sidebar
-		function w3_open() {
-			document.getElementById("mySidebar").style.display = "block";
-		}
-
-		function w3_close() {
-			document.getElementById("mySidebar").style.display = "none";
-		}
-	</script>
+	
 
 </body>
 </html>

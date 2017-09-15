@@ -23,9 +23,7 @@
 <script type="text/javascript" src="./javascripts/jquery-3.2.1.min.js"></script>
 <body>
 
-	<!-- Sidebar (hidden by default) -->
-	<jsp:include page="nav.jsp"/>
-
+	
 	<!-- Top menu -->
 	<jsp:include page="top.jsp"/>
 
@@ -98,16 +96,6 @@
 		<!-- End page content -->
 	</div>
 
-	<script>
-		// Script to open and close sidebar
-		function w3_open() {
-			document.getElementById("mySidebar").style.display = "block";
-		}
-
-		function w3_close() {
-			document.getElementById("mySidebar").style.display = "none";
-		}
-	</script>
 
 </body>
 </html>

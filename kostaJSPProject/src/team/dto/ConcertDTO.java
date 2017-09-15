@@ -53,6 +53,29 @@ public class ConcertDTO {
 		this.typeNum = typeNum;
 		this.cityNum = cityNum;
 	}
+	
+	
+
+	public ConcertDTO(int idx, String name, String place, String startDate, String endDate, String startTime,
+			String runningTime, String cast, String imageUri, int adminIdx, int typeNum, int cityNum,
+			String joinCityName, String joinTypeName) {
+		super();
+		this.idx = idx;
+		this.name = name;
+		this.place = place;
+		this.startDate = startDate;
+		this.endDate = endDate;
+		this.startTime = startTime;
+		this.runningTime = runningTime;
+		this.cast = cast;
+		this.imageUri = imageUri;
+		this.adminIdx = adminIdx;
+		this.typeNum = typeNum;
+		this.cityNum = cityNum;
+		this.joinCityName = joinCityName;
+		this.joinTypeName = joinTypeName;
+	}
+
 
 	public int getIdx() {
 		return idx;

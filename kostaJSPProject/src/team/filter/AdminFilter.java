@@ -28,8 +28,8 @@ public class AdminFilter implements Filter {
 			String id = (String)session.getAttribute("id");
 			
 			if(id != null){
-				// 정상적으로 로그인했을 때 이동할 페이지
-				httpRequest.getRequestDispatcher("admin.jsp").forward(request, response);
+				// 정상적으로 로그인 했을 때
+				chain.doFilter(request, response);
 			} else {
 				// id 없는 경우 에러페이진
 				String errorMsg = "아이디가 존재하지 않습니다";
@@ -40,7 +40,7 @@ public class AdminFilter implements Filter {
 			String errorMsg = "관리자 로그인이 필요합니다";
 			httpResponse.sendRedirect("error.jsp?msg"+errorMsg);
 		}
-		chain.doFilter(request, response);
+		
 	}
 
 	public void init(FilterConfig fConfig) throws ServletException {
