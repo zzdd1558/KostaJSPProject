@@ -17,8 +17,6 @@
 <meta charset="UTF-8">
 
 <body>
-
-
 	<!-- Top menu -->
 	<jsp:include page="top.jsp" />
 

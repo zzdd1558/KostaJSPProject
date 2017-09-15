@@ -1,6 +1,7 @@
 package team.controller;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.sql.SQLException;
 
 import javax.servlet.ServletException;
@@ -74,12 +75,16 @@ public class ManageConcertController extends HttpServlet {
 		}
 		response.sendRedirect("manageView/manageConcert.jsp");
 	}
+	
+	
 	public void delete(int idx,HttpServletRequest request, HttpServletResponse response) throws IOException{
 		try {
+			response.setContentType("text/text; charset=UTF-8");
 			ConcertDAO.delete(idx);
 		} catch (SQLException e) {
 		}
-		response.sendRedirect("manageView/manageConcert.jsp");
+		
+		response.getWriter().println("삭제되었습니다.");
 	}
 }
 
