@@ -17,8 +17,6 @@ public class ManageConcertController extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 		String command = request.getParameter("command");
 		
-		System.out.println(command);
-		
 		switch(command){
 		case"insert":
 			insert(request, response);
@@ -27,7 +25,7 @@ public class ManageConcertController extends HttpServlet {
 			update(request, response);
 			break;
 		case "delete":
-			delete(Integer.parseInt(request.getParameter("idx").trim()),request, response);
+			delete(request.getParameter("table"),Integer.parseInt(request.getParameter("idx").trim()),request, response);
 			break;
 		}
 	}
@@ -77,10 +75,21 @@ public class ManageConcertController extends HttpServlet {
 	}
 	
 	
-	public void delete(int idx,HttpServletRequest request, HttpServletResponse response) throws IOException{
+	public void delete(String table,int idx,HttpServletRequest request, HttpServletResponse response) throws IOException{
 		try {
 			response.setContentType("text/text; charset=UTF-8");
-			ConcertDAO.delete(idx);
+			
+			// 삭제할 부분이 추가된다면
+			// 삭제할 부분의 태그 id = removeBtn
+			// 아래 보이는 3개의 속성을 태그에 추가해주면 된다.
+			// $(this).attr("data-command");
+			// $(this).attr("data-idx");
+			// $(this).attr("data-table");
+			if("concert".equals(table)){
+				ConcertDAO.delete(idx);
+			}
+			
+			
 		} catch (SQLException e) {
 		}
 		

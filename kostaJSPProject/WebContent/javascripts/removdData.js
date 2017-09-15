@@ -4,6 +4,7 @@ $(document).ready(function() {
 	$(document).on("click","#removeBtn",function(){
 		let command = $(this).attr("data-command");
 		let idx = $(this).attr("data-idx");
+		let table = $(this).attr("data-table");
 		let check = confirm("삭제하시겠습니까?");
 		let that = this;
 		if(check){
@@ -12,6 +13,7 @@ $(document).ready(function() {
 				url : "../manageConcert",
 				datatype : "text",
 				data : {
+					"table" : table,
 					"idx" : idx,
 					"command" : command
 				},

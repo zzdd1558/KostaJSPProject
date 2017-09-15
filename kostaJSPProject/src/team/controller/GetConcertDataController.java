@@ -23,7 +23,6 @@ public class GetConcertDataController extends HttpServlet {
 		String command = request.getParameter("command");
 		String queryData = null;
 		if ("start".equals(command)) {
-			System.out.println(command);
 			String commandQuery = "select * from (  SELECT name, place , CI.city_name , TY.type_name ,start_date , end_date , start_time , running_time , cast , image_uri, CI.city_num FROM concert CON INNER JOIN city CI ON CON.city_num = CI.city_num INNER JOIN type TY  ON CON.type_num = TY.type_num    order by DBMS_RANDOM.RANDOM) where rownum <= ?";
 			final int num = 12;
 			try {

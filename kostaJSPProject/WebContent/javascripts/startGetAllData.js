@@ -48,27 +48,34 @@ function documentReady(){
 
 function domController(data){
 	$("#div-content > div").remove();
+	$("h3").remove();
 	console.log("datat loading");
 	let div = $("#div-content");
-	for (let i = 0; i < data.result.length; i++) {
-		div.append(`<div class="w3-row-padding w3-padding-16 w3-center inner-div${i}">`);
-		for (let j = 0; j < data.result[i].length; j++) {
-			let innerDiv = $(`.inner-div${i}`);
-			let rs = data.result[i];
-			innerDiv.append(`
-			<div class="w3-quarter">
-					<div class="img-quarter w3-border w3-padding">
-						<img src="./images/${cityNumToName[rs[j].cityNum]}/${rs[j].imageUri}.jpg" alt="${rs[j].name}" class="img-hello">
-					</div>
-					<h3>${rs[j].typeName} - ${rs[j].name}</h3>
-					<h5>장소 : ${rs[j].place}</h5>
-					<p>${rs[j].startDate} ~ ${rs[j].endDate}</p>
-					<p>${rs[j].startTime} - (${rs[j].runningTime}분)</p>
-					<p>출연진 : ${rs[j].cast}</p>
-			</div>
-			`)
-			
-		}
+	console.log(`길이 : ${data.result.length}`);
+	if(data.result.length <= 0){
+		div.append(`<div class="w3-row-padding w3-padding-16 w3-center inner-div">`);
+		div.append(`<h3> 데이터가 존재하지 않습니다 </h3>`);
 		div.append(`</div>`);
+	}else{
+		for (let i = 0; i < data.result.length; i++) {
+			div.append(`<div class="w3-row-padding w3-padding-16 w3-center inner-div${i}">`);
+			for (let j = 0; j < data.result[i].length; j++) {
+				let innerDiv = $(`.inner-div${i}`);
+				let rs = data.result[i];
+				innerDiv.append(`
+				<div class="w3-quarter">
+						<div class="img-quarter w3-border w3-padding">
+							<img src="./images/${cityNumToName[rs[j].cityNum]}/${rs[j].imageUri}.jpg" alt="${rs[j].name}" class="img-hello">
+						</div>
+						<h3>${rs[j].typeName} - ${rs[j].name}</h3>
+						<h5>장소 : ${rs[j].place}</h5>
+						<p>${rs[j].startDate} ~ ${rs[j].endDate}</p>
+						<p>${rs[j].startTime} - (${rs[j].runningTime}분)</p>
+						<p>출연진 : ${rs[j].cast}</p>
+				</div>
+				`);
+			}
+			div.append(`</div>`);
+		}
 	}
 }

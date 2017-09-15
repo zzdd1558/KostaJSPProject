@@ -52,7 +52,7 @@
 						</a></td>
 						<td><input type="button" class="w3-button w3-red w3-round"
 							value="삭제" id="removeBtn" data-command="delete"
-							data-idx="${pageScope.data.idx}"></td>
+							data-idx="${pageScope.data.idx}" data-table="concert"></td>
 					</tr>
 				</c:forEach>
 			</table>
