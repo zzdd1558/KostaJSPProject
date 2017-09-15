@@ -147,7 +147,7 @@ public class ConcertDAO {
 		ResultSet rset = null;
 		
 		try {
-			String query = "SELECT name, place , CI.city_name , TY.type_name ,start_date , end_date , start_time , running_time , cast , image_uri FROM concert CON INNER JOIN city CI ON CON.city_num = CI.city_num INNER JOIN type TY  ON CON.type_num = TY.type_num   WHERE CON.city_num = ?";
+			String query = "SELECT name, place , CI.city_name , TY.type_name ,start_date , end_date , start_time , running_time , cast , image_uri, CI.city_num FROM concert CON INNER JOIN city CI ON CON.city_num = CI.city_num INNER JOIN type TY  ON CON.type_num = TY.type_num   WHERE CON.city_num = ?";
 			pstmt = con.prepareStatement(query);
 			pstmt.setInt(1, cityNum);
 
@@ -163,7 +163,8 @@ public class ConcertDAO {
 									     rset.getString(7).trim(),
 									     rset.getString(8).trim(), 
 									     rset.getString(9).trim(),
-									     rset.getString(10).trim()));
+									     rset.getString(10).trim(),
+									     rset.getInt(11)));
 			}
 		} finally {
 			DBUtil.close(con, pstmt);
