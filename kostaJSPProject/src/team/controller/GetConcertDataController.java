@@ -59,14 +59,21 @@ public class GetConcertDataController extends HttpServlet {
 
 		// 데이터의 size를 row당 4개씩 표현해주기 위해 row의 갯수를 잡음.
 		int rowCount = (int) (Math.ceil((double) resultSize / ROW_QUARTER));
+		
+		// 반복문 조건식 대입 변수
 		int columnCount = 0;
-		StringBuilder sb = null;
-		sb = new StringBuilder();
+		
+		StringBuilder sb = new StringBuilder();;
+		
 
 		/** JSON 데이터 가공하는부분 */
 		sb.append("{ \"result\":[");
 		for (int i = 0; i < rowCount; i++) {
+			
+			//반복문 조건식을 수행할 데이터값 연산
 			columnCount = (i + 1) * ROW_QUARTER;
+			
+			// 넘어온 데이터의 갯수보다 많으면 데이터의 갯수로 설정.
 			if (columnCount > resultSize) {
 				columnCount = resultSize;
 			}
@@ -76,6 +83,7 @@ public class GetConcertDataController extends HttpServlet {
 
 				dataDTO = resultList.get(j);
 
+				//하나의 데이터에 대한 JSON 타입 데이터 가공.
 				sb.append("{\"name\":\"" + dataDTO.getName() + "\"");
 				sb.append(",\"place\":\"" + dataDTO.getPlace() + "\"");
 				sb.append(",\"cityName\":\"" + dataDTO.getJoinCityName() + "\"");
@@ -88,9 +96,10 @@ public class GetConcertDataController extends HttpServlet {
 				sb.append(",\"imageUri\":\"" + dataDTO.getImageUri() + "\"");
 				sb.append(",\"cityNum\":\"" + dataDTO.getCityNum() + "\"");
 
+				/** 2중포문의 조건식보다 -1 작다는건  첫줄의 마지막데이터이기 때문에 괄호로 닫아준다.*/
 				if (j == columnCount - 1) {
 					sb.append("}");
-				} else {
+				} else { // 아닌경우는 ,로 데이터 이어줌.
 					sb.append("},");
 				}
 			}
@@ -102,6 +111,10 @@ public class GetConcertDataController extends HttpServlet {
 			}
 		}
 		sb.append("]}");
+		/**
+		 *  JSON 데이터 가공 끝.
+		 *  kindsOfAreaGetData.js의 ajax로 콜백
+		 *  */
 		return sb.toString();
 	}
 }

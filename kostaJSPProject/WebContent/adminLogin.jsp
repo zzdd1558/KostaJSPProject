@@ -65,12 +65,13 @@ span.psw {
 </style>
 <body>
 	<h2 style="text-align: center;">관리자 로그인</h2>
+	<%-- action servlet src/team.controller/LoginCheck.java  --%>
 	<form action="LoginCheck" method="post">
 		<div class="container">
-			<label><b>ID</b></label> <input type="text" placeholder="이름을 입력해주세요"
-				name="id" required> <label><b>비밀번호</b></label> <input
-				type="password" placeholder="비밀번호를 입력해주세요" name="pw" required>
-
+			<label><b>ID</b></label> 
+			<input type="text" placeholder="이름을 입력해주세요"	name="id" required> 
+			<label><b>비밀번호</b></label> 
+			<input type="password" placeholder="비밀번호를 입력해주세요" name="pw" required>
 			<button type="submit">
 				<strong>로그인</strong>
 			</button>
