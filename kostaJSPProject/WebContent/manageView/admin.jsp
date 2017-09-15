@@ -15,15 +15,7 @@
 <title>관리자 페이지</title>
 <meta charset="UTF-8">
 
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="./stylesheets/w3.css">
-<link rel="stylesheet" href="./stylesheets/fonts_googleapis.css">
-<link rel="stylesheet" href="./stylesheets/common.css" />
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<script type="text/javascript" src="./javascripts/jquery-3.2.1.min.js"></script>
 <body>
-	<
-
 	<!-- Top menu -->
 	<jsp:include page="top.jsp"/>
 

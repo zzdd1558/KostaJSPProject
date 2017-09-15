@@ -8,9 +8,7 @@
 <link rel="stylesheet" href="${pageContext.request.contextPath}/stylesheets/w3.css">
 <link rel="stylesheet" href="${pageContext.request.contextPath}/stylesheets/fonts_googleapis.css">
 <link rel="stylesheet" href="${pageContext.request.contextPath}/stylesheets/common.css" />
-<link rel="stylesheet" href="${pageContext.request.contextPath}/stylesheets/jquery-confirm.min.css" />
 <script type="text/javascript" src="${pageContext.request.contextPath}/javascripts/jquery-3.2.1.min.js"></script>
-<script type="text/javascript" src="${pageContext.request.contextPath}/javascripts/jquery-confirm.min.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/javascripts/removdData.js"></script>
 <body>
 

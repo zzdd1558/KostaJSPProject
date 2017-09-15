@@ -37,6 +37,7 @@ function documentReady(){
 			"command" : "start"
 		},
 		success : function(data) {
+			console.log(data);
 			domController(data);
 		},
 		error : function(e) {
@@ -47,7 +48,7 @@ function documentReady(){
 
 function domController(data){
 	$("#div-content > div").remove();
-	
+	console.log("datat loading");
 	let div = $("#div-content");
 	for (let i = 0; i < data.result.length; i++) {
 		div.append(`<div class="w3-row-padding w3-padding-16 w3-center inner-div${i}">`);

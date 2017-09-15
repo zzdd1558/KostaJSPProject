@@ -23,6 +23,7 @@ public class GetConcertDataController extends HttpServlet {
 		String command = request.getParameter("command");
 		String queryData = null;
 		if ("start".equals(command)) {
+			System.out.println(command);
 			String commandQuery = "select * from (  SELECT name, place , CI.city_name , TY.type_name ,start_date , end_date , start_time , running_time , cast , image_uri, CI.city_num FROM concert CON INNER JOIN city CI ON CON.city_num = CI.city_num INNER JOIN type TY  ON CON.type_num = TY.type_num    order by DBMS_RANDOM.RANDOM) where rownum <= ?";
 			final int num = 12;
 			try {
@@ -34,6 +35,7 @@ public class GetConcertDataController extends HttpServlet {
 			}
 		} else if ("area".equals(command)) {
 			int cityNum = Integer.parseInt(request.getParameter("cityNum"));
+			System.out.println(command);
 			try {
 				String commandQuery = "SELECT name, place , CI.city_name , TY.type_name ,start_date , end_date , start_time , running_time , cast , image_uri, CI.city_num FROM concert CON INNER JOIN city CI ON CON.city_num = CI.city_num INNER JOIN type TY  ON CON.type_num = TY.type_num   WHERE CON.city_num = ?";
 				List<ConcertDTO> resultList = ConcertDAO.getKindsOfCityData(commandQuery,cityNum);

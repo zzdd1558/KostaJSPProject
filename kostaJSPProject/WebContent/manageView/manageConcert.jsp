@@ -15,10 +15,7 @@
 <html>
 <title>공연 관리</title>
 <meta charset="UTF-8">
-
 <body>
-
-
 	<!-- Top menu -->
 	<jsp:include page="top.jsp" />
 
@@ -53,17 +50,9 @@
 						<td><a href="updateConcert.jsp?idx=${pageScope.data.idx}">
 								<button class="w3-button w3-green w3-round">수정</button>
 						</a></td>
-						<td>
-							<%-- <form action="${pageContext.request.contextPath}/manageConcert"
-								method="post">
-
-								<input type="hidden" name="command" value="delete"> 
-								<input type="hidden" name="idx" value="${pageScope.data.idx}">
-								
-							</form> --%>
-							<input type="button" class="w3-button w3-red w3-round"
-									value="삭제" id="remove">
-						</td>
+						<td><input type="button" class="w3-button w3-red w3-round"
+							value="삭제" id="removeBtn" data-command="delete"
+							data-idx="${pageScope.data.idx}"></td>
 					</tr>
 				</c:forEach>
 			</table>
@@ -77,7 +66,6 @@
 		<!-- Footer -->
 		<jsp:include page="footer.jsp" />
 
-		<!-- End page content -->
 	</div>
 
 
