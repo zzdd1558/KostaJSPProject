@@ -67,4 +67,14 @@
     <servlet-name>GetKindsOfAreaDataController</servlet-name>
     <url-pattern>/getKindsOfData.do</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ManageConcertController</display-name>
+    <servlet-name>ManageConcertController</servlet-name>
+    <servlet-class>team.controller.ManageConcertController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ManageConcertController</servlet-name>
+    <url-pattern>/manageConcert</url-pattern>
+  </servlet-mapping>
 </web-app>

@@ -48,7 +48,7 @@
 				</table>
 				<div class="w3-panel w3-padding-32">
 					<a href="manageConcert.jsp">
-						<button class="w3-btn w3-black">더보기</button>
+						<button class="w3-button w3-black w3-round">더보기</button>
 					</a>
 				</div>
 				
@@ -69,7 +69,7 @@
 				</table>
 				<div class="w3-panel w3-padding-32">
 					<a href="manageCity.jsp">
-						<button class="w3-btn w3-black">더보기</button>
+						<button class="w3-button w3-black w3-round">더보기</button>
 					</a>
 				</div>
 			</div>
@@ -89,7 +89,7 @@
 				</table>
 				<div class="w3-panel w3-padding-32">
 					<a href="manageType.jsp">
-						<button class="w3-btn w3-black">더보기</button>
+						<button class="w3-button w3-black w3-round">더보기</button>
 					</a>
 				</div>
 			</div>
