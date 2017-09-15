@@ -145,7 +145,7 @@ public class ConcertDAO {
 	 * 
 	 */
 	
-	public static List<ConcertDTO> getKindsOfCityData(int cityNum) throws SQLException {
+	public static List<ConcertDTO> getKindsOfCityData(String commandQuery , int num) throws SQLException {
 		
 		List<ConcertDTO> list = new ArrayList<>();
 		Connection con = DBUtil.getConnection();
@@ -153,9 +153,9 @@ public class ConcertDAO {
 		ResultSet rset = null;
 		
 		try {
-			String query = "SELECT name, place , CI.city_name , TY.type_name ,start_date , end_date , start_time , running_time , cast , image_uri, CI.city_num FROM concert CON INNER JOIN city CI ON CON.city_num = CI.city_num INNER JOIN type TY  ON CON.type_num = TY.type_num   WHERE CON.city_num = ?";
+			String query = commandQuery;
 			pstmt = con.prepareStatement(query);
-			pstmt.setInt(1, cityNum);
+			pstmt.setInt(1, num);
 
 			rset = pstmt.executeQuery();
 			
