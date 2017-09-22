@@ -6,6 +6,8 @@
 
 2017-09-14 ~ 2017-09-16
 
+jdk 1.8.131 
+
 사용 기술 : HTML5( HTML5 Custom Attribute) , CSS3( W3.css ) , Javascript( jQuery ) , JSP/Servlet ( EL , JSTL , Action Tag )
 
 추가 [WEB-INF] -> [lib] -> ojdbc6.jar
