@@ -7,9 +7,9 @@
 		auth="Container"
 	    type="javax.sql.DataSource" 	
 	    driverClassName="oracle.jdbc.OracleDriver"
-	    url="jdbc:oracle:thin:@211.49.199.24:1521:orcl"
-	    username="kosta" 
-	    password="kosta1234" 
+	    url="jdbc:oracle:thin:@YOUR_IP:YOUR_PORT:orcl"
+	    username="YOUR_ID" 
+	    password="YOUR_PASSWORD" 
 	    maxTotal="20" 	
 	    maxIdle="10"
 	    maxWaitMillis="-1"/>
